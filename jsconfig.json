@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@app": ["./App"],
+      "@rwv": ["./reportWebVitals"],
+      "@screens": ["./screens"],
+      "@assets/*": ["./assets/*"],
+      "@fonts/*": ["./fonts/*"],
+      "@context": ["./context"],
+      "@components": ["./components"],
+      "@styles": ["./styles"],
+
+      "@common/*": ["./components/common-co/*"],
+      "@layout/*": ["./components/layout-co/*"]
+    }
+  },
+  "include": ["src"]
+}
