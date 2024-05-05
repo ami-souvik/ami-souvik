@@ -3,7 +3,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 export const GithubRepoCard = ({ data }) => (
-  <Card key={data.id}>
+  <Card key={data.id} sx={{ margin: '6px' }}>
     <CardHeader
       avatar={
         <Avatar sx={{ bgcolor: 'primary.main' }}>

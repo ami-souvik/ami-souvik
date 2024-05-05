@@ -21,7 +21,7 @@ export const Work = () => {
       <Typography variant="body2" textTransform="uppercase">
         A collection of tools and sites I've created, designed to be helpful, fun, & sometimes just a little bit weird.
       </Typography>
-      <Grid container spacing={2}>
+      <Grid container>
         {repos.map((each) => (
           <Grid item xs={mdw ? 12 : 6}>
             <GithubRepoCard data={each} />
