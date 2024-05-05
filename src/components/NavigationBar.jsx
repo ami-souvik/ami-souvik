@@ -14,6 +14,10 @@ const urls = [
     label: 'About',
   },
   {
+    href: '/work',
+    label: 'Work',
+  },
+  {
     href: '/blogs',
     label: 'Blogs',
   },
@@ -95,6 +99,8 @@ export const NavigationBar = () => {
       <Key href="/">Home</Key>
       <Seperator />
       <Key href="/about">About</Key>
+      <Seperator />
+      <Key href="/work">Work</Key>
       <Seperator />
       <Key href="/blogs">Blogs</Key>
       <Seperator />

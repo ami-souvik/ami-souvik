@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { getDesignTokens } from '@styles';
 import { Route, RouterProvider, Routes, useApp } from '@context';
-import { Home, About, Blogs, Contact } from '@screens';
+import { Home, About, Blogs, Contact, Work } from '@screens';
 import { Background, Footer, Header } from '@components';
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" component={Home} />
             <Route path="/about" component={About} />
+            <Route path="/work" component={Work} />
             <Route path="/blogs" component={Blogs} />
             <Route path="/contact" component={Contact} />
           </Routes>
