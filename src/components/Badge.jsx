@@ -10,9 +10,10 @@ const spin = keyframes`
   }
 `;
 
-export const Badge = ({ id, label, icon }) => {
+export const Badge = ({ id, label, icon, sx = {}, inputSx = {} }) => {
   const theme = useTheme();
   const badgePathId = `${id}-path`;
+  const { fill } = inputSx;
   return (
     <Box
       position="relative"
@@ -20,9 +21,10 @@ export const Badge = ({ id, label, icon }) => {
       height={160}
       p={1}
       borderRadius="50%"
-      border={`2px solid ${theme.palette.primary.main}`}
+      border={`2px solid ${fill || theme.palette.primary.main}`}
       sx={{
         animation: `${spin} 10s linear infinite`,
+        ...sx,
       }}
     >
       <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -38,12 +40,12 @@ export const Badge = ({ id, label, icon }) => {
             40,40 0 1,1 -80,0"
           fill="transparent"
         ></path>
-        <text style={{ fill: theme.palette.primary.main }}>
+        <text style={{ fill: fill || theme.palette.primary.main, ...inputSx }}>
           <textPath href={`#${badgePathId}`}>{label}</textPath>
         </text>
       </svg>
       <Box position="absolute" top="50%" left="50%" sx={{ transform: 'translate(-50%, -50%)' }}>
-        {createElement(icon, { fontSize: 'large' })}
+        {icon}
       </Box>
     </Box>
   );

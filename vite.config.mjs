@@ -15,11 +15,13 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './src/assets'),
       '@fonts': path.resolve(__dirname, './src/fonts'),
       '@context': path.resolve(__dirname, './src/context'),
+      '@config': path.resolve(__dirname, './src/config'),
+      '@store': path.resolve(__dirname, './src/store'),
+      '@slice': path.resolve(__dirname, './src/store/slice'),
       '@components': path.resolve(__dirname, './src/components'),
+      '@webservices': path.resolve(__dirname, './src/webservices'),
+      '@utils': path.resolve(__dirname, './src/utils'),
       '@styles': path.resolve(__dirname, './src/styles'),
-
-      '@common': path.resolve(__dirname, './src/components/common-co'),
-      '@layout': path.resolve(__dirname, './src/components/layout-co')
     }
   }
 })

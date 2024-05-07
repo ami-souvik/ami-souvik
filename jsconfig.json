@@ -8,11 +8,13 @@
       "@assets/*": ["./assets/*"],
       "@fonts/*": ["./fonts/*"],
       "@context": ["./context"],
+      "@config": ["./config"],
+      "@store": ["./store"],
+      "@slice": ["./store/slice"],
       "@components": ["./components"],
+      "@webservices": ["./webservices"],
+      "@utils": ["./utils"],
       "@styles": ["./styles"],
-
-      "@common/*": ["./components/common-co/*"],
-      "@layout/*": ["./components/layout-co/*"]
     }
   },
   "include": ["src"]

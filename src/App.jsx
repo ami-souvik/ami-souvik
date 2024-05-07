@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import { getDesignTokens } from '@styles';
+import { routes } from '@config';
 import { Route, RouterProvider, Routes, useApp } from '@context';
-import { Home, About, Blogs, Contact, Work } from '@screens';
 import { Background, Footer, Header } from '@components';
+import { getDesignTokens } from '@styles';
 
 function App() {
   const { mode } = useApp();
@@ -15,11 +15,14 @@ function App() {
         <RouterProvider href="/">
           <Header />
           <Routes>
-            <Route path="/" component={Home} />
+            {routes.map(({ href, component }) => (
+              <Route key={href} path={href} component={component} />
+            ))}
+            {/* <Route path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/work" component={Work} />
             <Route path="/blogs" component={Blogs} />
-            <Route path="/contact" component={Contact} />
+            <Route path="/contact" component={Contact} /> */}
           </Routes>
         </RouterProvider>
       </Background>
