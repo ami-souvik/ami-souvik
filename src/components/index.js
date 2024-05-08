@@ -9,6 +9,6 @@ export * from './Footer';
 export * from './FooterItem';
 export * from './Clickable';
 export * from './Badge';
-export * from './GithubRepoCard';
+export * from './WorkSummary';
 export * from './Image';
 export * from './Navigator';

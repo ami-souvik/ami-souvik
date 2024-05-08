@@ -3,7 +3,7 @@
   font-family: 'SignPainter';
   src:
     local('SignPainterHouseScript.ttf'),
-    url(./fonts/SignPainterHouseScript.ttf) format('truetype');
+    url(./assets/SignPainterHouseScript.ttf) format('truetype');
 }
 :root {
   /** Primary colors */

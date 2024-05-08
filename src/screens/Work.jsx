@@ -1,6 +1,11 @@
-import { Grid, Stack, Typography } from '@mui/material';
-import { GithubRepoCard } from '@components';
+import { Divider, Grid, Stack, Typography, styled } from '@mui/material';
+import { WorkSummary } from '@components';
 import { projects } from '@config';
+
+const SDivider = styled(Divider)(({ theme }) => ({
+  width: '100%',
+  border: `1px solid ${theme.palette.text.primary}`,
+}));
 
 export const Work = () => {
   return (
@@ -8,13 +13,17 @@ export const Work = () => {
       <Typography variant="body2" textTransform="uppercase">
         A collection of tools and sites I've created, designed to be helpful, fun, & sometimes just a little bit weird.
       </Typography>
-      <Grid container>
-        {projects?.map((repo) => (
-          <Grid key={repo.github} item xs={12}>
-            <GithubRepoCard repo={repo} />
-          </Grid>
+      <Stack spacing={2}>
+        {projects?.map((repo, index) => (
+          <>
+            <SDivider />
+            <Grid key={repo.github} item xs={12}>
+              <WorkSummary index={index + 1} repo={repo} />
+            </Grid>
+          </>
         ))}
-      </Grid>
+        <SDivider />
+      </Stack>
     </Stack>
   );
 };

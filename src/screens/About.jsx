@@ -6,7 +6,7 @@ export const About = () => {
     <Stack flex={1} spacing={1}>
       <Stack direction="row" spacing={2} alignItems="center">
         <Typography variant="h4">Hello again, I am</Typography>
-        <Typography variant="h3" fontFamily="SignPainter">
+        <Typography variant="h2" fontWeight={800} fontFamily="SignPainter">
           Sav
         </Typography>
       </Stack>

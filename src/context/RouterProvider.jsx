@@ -17,6 +17,7 @@ export const RouterProvider = ({ href = '/', children }) => {
   onpopstate = (e) => setState(e.state);
   window.addEventListener('popstate', onpopstate);
   const navigate = (href) => {
+    console.log(href);
     window.history.pushState({ href }, '', window.location.protocol + '//' + window.location.host + href);
     setState({ href });
   };

@@ -7,6 +7,7 @@ const StyledAction = styled(Link)(({ theme, disabled }) => ({
   userSelect: 'none',
   pointerEvents: disabled ? 'none' : 'auto',
   color: theme.palette.text.primary,
+  padding: '12px 24px',
 }));
 
 export const NavigationDrawer = ({ state, routes, click }) => {
@@ -37,7 +38,7 @@ export const NavigationDrawer = ({ state, routes, click }) => {
       <Drawer anchor="bottom" open={open} onClose={toggleDrawer(false)}>
         <Stack>
           {routes.map(({ href, label }) => (
-            <StyledAction key={href} disabled={state.href === href} href={href} onClick={click}>
+            <StyledAction key={href} disabled={state.href === href} href={href} onClick={handleClick(href)}>
               <Typography fontWeight={state.href === href ? 600 : 400} fontFamily="Outfit">
                 {label}
               </Typography>

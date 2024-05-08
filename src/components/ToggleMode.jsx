@@ -4,30 +4,26 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { useApp } from '@context';
 
 const Toggle = styled(Switch)(({ theme }) => ({
-  width: 44,
-  height: 28,
+  width: 52,
+  height: 36,
   padding: 0,
   '& .MuiSwitch-switchBase': {
-    margin: 1,
-    padding: 1,
+    margin: 3,
+    padding: 3,
     backgroundColor: 'transparent',
-    '&:hover': {
-      backgroundColor: `${theme.palette.secondary.main}22`,
-    },
     transform: 'translateX(0px)',
     '&.Mui-checked': {
-      color: theme.palette.secondary.main,
       transform: 'translateX(16px)',
       '& + .MuiSwitch-track': {
         opacity: 1,
-        backgroundColor: theme.palette.text.primary,
+        backgroundColor: 'transparent',
       },
     },
   },
   '& .MuiSwitch-thumb': {
-    backgroundColor: theme.palette.text.primary,
     width: 24,
     height: 24,
+    color: 'white',
     '&::before': {
       content: "''",
       position: 'absolute',
@@ -39,8 +35,12 @@ const Toggle = styled(Switch)(({ theme }) => ({
   },
   '& .MuiSwitch-track': {
     opacity: 1,
-    backgroundColor: theme.palette.text.primary,
+    backgroundColor: 'transparent',
     borderRadius: 20,
+    border: `1px solid ${theme.palette.text.primary}`,
+  },
+  '& .MuiSvgIcon-root': {
+    color: theme.palette.text.primary,
   },
 }));
 

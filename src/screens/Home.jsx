@@ -11,9 +11,7 @@ export const Home = () => {
         <Stack flex={1} spacing={1} alignItems="flex-start">
           <Stack direction="row" spacing={2} alignItems="center">
             <Image w="48px" src={greeting} />
-            <Typography variant="h3" paddingY="16px">
-              It's a me,
-            </Typography>
+            <Typography variant="h3">It's-a me,</Typography>
             <Typography variant="h1" fontFamily="SignPainter">
               Sav
             </Typography>
@@ -23,7 +21,7 @@ export const Home = () => {
         <Badge
           id="default-badge"
           sx={{
-            bgcolor: '#FAC748',
+            bgcolor: '#FFE66D',
           }}
           inputSx={{
             fill: '#000',
