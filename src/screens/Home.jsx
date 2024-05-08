@@ -12,7 +12,7 @@ export const Home = () => {
           <Stack direction="row" spacing={2} alignItems="center">
             <Image w="48px" src={greeting} />
             <Typography variant="h3">It's-a me,</Typography>
-            <Typography variant="h1" fontFamily="SignPainter">
+            <Typography variant="h1" fontFamily="SignPainter-B">
               Sav
             </Typography>
           </Stack>

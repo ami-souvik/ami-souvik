@@ -7,7 +7,7 @@ export const Title = () => {
       <Typography variant="h4" lineHeight="1.8rem" fontWeight={700}>
         savs
       </Typography>
-      <Typography variant="h3" fontFamily="SignPainter" fontWeight={600}>
+      <Typography variant="h3" fontFamily="SignPainter-B">
         .sprite
       </Typography>
     </Stack>
