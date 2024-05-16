@@ -12,9 +12,7 @@ export const Canvas = () => {
   } = useApp();
   const mdw = useMediaQuery((theme) => theme.breakpoints.down('md'));
   useEffect(() => {
-    const sketch = new p5((p) =>
-      mdw ? MobileWaterRippleSketch({ mode, sectionHeight, p }) : WaterRippleSketch({ mode, sectionHeight, p }),
-    );
+    const sketch = new p5((p) => WaterRippleSketch({ mode, sectionHeight, p }));
     return () => {
       sketch.remove();
     };
