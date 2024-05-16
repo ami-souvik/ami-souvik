@@ -12,3 +12,4 @@ export * from './Badge';
 export * from './WorkSummary';
 export * from './Image';
 export * from './Navigator';
+export * from './interactive-co';

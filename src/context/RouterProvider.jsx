@@ -13,18 +13,22 @@ export const useRouter = () => {
 };
 
 export const RouterProvider = ({ href = '/', children }) => {
+  const [prevstate, setPrevState] = useState(null);
   const [state, setState] = useState({ href });
-  onpopstate = (e) => setState(e.state);
+  onpopstate = (e) => {
+    setPrevState(null);
+    setState(e.state);
+  };
   window.addEventListener('popstate', onpopstate);
   const navigate = (href) => {
-    console.log(href);
     window.history.pushState({ href }, '', window.location.protocol + '//' + window.location.host + href);
+    setPrevState(state);
     setState({ href });
   };
   useEffect(() => {
     setState({ href: window.location.pathname });
   }, []);
-  return <RouterContext.Provider value={{ state, navigate }}>{children}</RouterContext.Provider>;
+  return <RouterContext.Provider value={{ prevstate, state, navigate }}>{children}</RouterContext.Provider>;
 };
 
 export const Routes = ({ children }) => {

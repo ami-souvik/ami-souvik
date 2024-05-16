@@ -15,3 +15,9 @@ body {
   margin: 0;
   background-color: #eef5db;
 }
+#water-ripple-canvas {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}

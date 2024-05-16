@@ -8,10 +8,8 @@ export const Header = () => {
     <Stack>
       <Stack p={mdw ? '6px 24px' : '12px 48px'} direction="row" justifyContent="space-between" alignItems="center">
         <Title />
-        <Stack direction="row" spacing={2}>
-          <Navigator />
-          <ToggleMode />
-        </Stack>
+        <Navigator />
+        <ToggleMode />
       </Stack>
     </Stack>
   );

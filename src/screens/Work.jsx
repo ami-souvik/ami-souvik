@@ -1,4 +1,4 @@
-import { Divider, Grid, Stack, Typography, styled } from '@mui/material';
+import { Box, Divider, Grid, Stack, Typography, styled } from '@mui/material';
 import { WorkSummary } from '@components';
 import { projects } from '@config';
 
@@ -17,7 +17,7 @@ export const Work = () => {
         {projects?.map((repo, index) => (
           <>
             <SDivider />
-            <Grid key={repo.github} item xs={12}>
+            <Grid item xs={12}>
               <WorkSummary index={index + 1} repo={repo} />
             </Grid>
           </>

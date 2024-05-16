@@ -14,6 +14,7 @@ export default defineConfig({
       '@screens': path.resolve(__dirname, './src/screens'),
       '@assets': path.resolve(__dirname, './src/assets'),
       '@fonts': path.resolve(__dirname, './src/fonts'),
+      '@p5': path.resolve(__dirname, './src/p5'),
       '@context': path.resolve(__dirname, './src/context'),
       '@config': path.resolve(__dirname, './src/config'),
       '@store': path.resolve(__dirname, './src/store'),

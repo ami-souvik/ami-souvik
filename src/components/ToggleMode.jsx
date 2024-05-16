@@ -7,6 +7,9 @@ const Toggle = styled(Switch)(({ theme }) => ({
   width: 52,
   height: 36,
   padding: 0,
+  borderRadius: 20,
+  boxShadow: `0px 0px 12px -4px ${theme.palette.primary.main}44`,
+
   '& .MuiSwitch-switchBase': {
     margin: 3,
     padding: 3,
@@ -37,7 +40,7 @@ const Toggle = styled(Switch)(({ theme }) => ({
     opacity: 1,
     backgroundColor: 'transparent',
     borderRadius: 20,
-    border: `1px solid ${theme.palette.text.primary}`,
+    // border: `1px solid ${theme.palette.text.primary}`,
   },
   '& .MuiSvgIcon-root': {
     color: theme.palette.text.primary,

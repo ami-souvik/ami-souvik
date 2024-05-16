@@ -7,6 +7,7 @@
       "@screens": ["./screens"],
       "@assets/*": ["./assets/*"],
       "@fonts/*": ["./fonts/*"],
+      "@p5": ["./p5"],
       "@context": ["./context"],
       "@config": ["./config"],
       "@store": ["./store"],

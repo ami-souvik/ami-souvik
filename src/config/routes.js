@@ -31,3 +31,13 @@ export const routes = [
 		component: LandingPageTemplate
 	},
 ];
+
+export const getRouteIndex = (href) => {
+	let index = -1
+	routes.forEach((route, i) => {
+		if(route.href === href) {
+			index = i
+		}
+	})
+	return index
+}
