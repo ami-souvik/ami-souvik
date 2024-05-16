@@ -5,7 +5,8 @@ let damping = 0.97;
 let bgColor, rippleColor;
 let frameRateElement;
 
-export const WaterRippleSketch = ({ mode, sectionHeight,  p }) => {
+export const MobileWaterRippleSketch = ({ mode, sectionHeight,  p }) => {
+
   p.setup = () => {
     p.createCanvas(p.windowWidth, sectionHeight).id('water-ripple-canvas');
     p.pixelDensity(1);
@@ -51,15 +52,19 @@ export const WaterRippleSketch = ({ mode, sectionHeight,  p }) => {
     let temp = previous;
     previous = current;
     current = temp;
+
     frameRateElement.html('Frame Rate: ' + Math.round(p.frameRate()));
   };
 
-  p.mousePressed = () => {
-    let x = p.mouseX;
-    let y = p.mouseY;
-    if (x > 0 && x < cols && y > 0 && y < rows) {
-      previous[x + y * cols] = 500;
+  p.touchStarted = () => {
+    if (p.touches.length === 1) {
+      let x = p.touches[0].x;
+      let y = p.touches[0].y;
+      if (x > 0 && x < cols && y > 0 && y < rows) {
+        previous[x + y * cols] = 500;
+      }
     }
+    return false; // Prevent default
   };
 
   p.windowResized = () => {
@@ -73,11 +78,11 @@ export const WaterRippleSketch = ({ mode, sectionHeight,  p }) => {
 
   function updateColors(mode) {
     if (mode === 'dark') {
-      bgColor = p.color(18);
-      rippleColor = p.color(255);
+	  bgColor = p.color(18);
+	  rippleColor = p.color(255);
     } else {
-      bgColor = p.color(255);
-      rippleColor = p.color(18);
+	  bgColor = p.color(255);
+	  rippleColor = p.color(18);
     }
   }
 };

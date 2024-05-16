@@ -19,10 +19,10 @@ export const Home = (props) => {
     <section ref={sectionRef}>
       <Stack spacing={4} marginLeft="-32px">
         <Grid container sx={{ width: '100%' }} spacing={4}>
-          <Grid item xs={mdw ? 12 : 8}>
-            <Box p="48px 24px" sx={{ userSelect: 'none' }}>
+          <Grid item xs={12}>
+            <Box p={mdw ? '0px' : '48px 24px'} sx={{ userSelect: 'none' }}>
               <Typography variant="h1">I will help you build the</Typography>
-              <Typography variant="h1" marginTop="-16px">
+              <Typography variant="h1" marginTop={mdw ? '0px' : '-16px'}>
                 platform of your{' '}
                 <Typography variant="signh1" fontFamily="SignPainter-B">
                   dreams
@@ -31,7 +31,6 @@ export const Home = (props) => {
               <Typography>I'm a Freelance Professional working remotely from Kolkata, India.</Typography>
             </Box>
           </Grid>
-          <Grid item xs={mdw ? 12 : 4}></Grid>
           <Grid item xs={mdw ? 12 : 8}>
             <Box
               p="48px 24px"
