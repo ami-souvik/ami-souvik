@@ -1,5 +1,6 @@
+import { Box, Divider, Grid, Link, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { About } from '@screens';
 import { ProcessIndicator } from '@components';
-import { Box, Divider, Grid, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { process } from '@config';
 import sav from '@assets/sav.jpg';
 import react from '@assets/react.png';
@@ -100,23 +101,35 @@ export const Home = (props) => {
             </Stack>
           </Grid>
         </Grid>
-        <Grid container spacing={4} sx={{ width: '100%' }}>
-          <Grid item xs={4}>
-            <Stack width="100%" height="48px" bgcolor="text.primary" sx={{ opacity: 0.2 }} borderRadius="12px" />
-          </Grid>
-          <Grid item xs={8}>
-            <Stack width="100%" height="48px" bgcolor="text.primary" sx={{ opacity: 0.2 }} borderRadius="12px" />
-          </Grid>
-          <Grid item xs={4}>
-            <Stack width="100%" height="48px" bgcolor="text.primary" sx={{ opacity: 0.2 }} borderRadius="12px" />
-          </Grid>
-          <Grid item xs={4}>
-            <Stack width="100%" height="48px" bgcolor="text.primary" sx={{ opacity: 0.2 }} borderRadius="12px" />
-          </Grid>
-          <Grid item xs={4}>
-            <Stack width="100%" height="48px" bgcolor="text.primary" sx={{ opacity: 0.2 }} borderRadius="12px" />
-          </Grid>
-        </Grid>
+      </Stack>
+      <About />
+      <Stack
+        id="contact"
+        flex={1}
+        spacing={4}
+        direction={mdw ? 'column' : 'row'}
+        justifyContent="space-between"
+        border={`1px solid ${theme.palette.text.primary}`}
+        sx={{
+          padding: '24px 96px 24px 48px',
+          marginY: '24px',
+        }}
+      >
+        <Stack spacing={1}>
+          <Typography>Connect</Typography>
+          <Typography variant="h3">Get in Touch</Typography>
+          <Typography>I'd love to hear from you, for any inquiries or collaborations.</Typography>
+        </Stack>
+        <Stack spacing={1}>
+          <Typography fontWeight={600}>Email</Typography>
+          <Link href="mailto:dsouvik141@gmail.com">
+            <Typography>dsouvik141@gmail.com</Typography>
+          </Link>
+          <Typography fontWeight={600}>Phone</Typography>
+          <Link href="tel:919062786568">
+            <Typography>+91-9062786568</Typography>
+          </Link>
+        </Stack>
       </Stack>
     </section>
   );

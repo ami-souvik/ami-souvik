@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useTheme } from '@mui/material';
+import { useMediaQuery, useTheme } from '@mui/material';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 export const StickyCursor = ({ stickyElement }) => {
   const theme = useTheme();
+  const mdw = useMediaQuery((theme) => theme.breakpoints.down('md'));
   const [isHovered, setIsHovered] = useState(false);
-  console.log('Sticky cursor hovering event: ', isHovered);
   const cursorSize = isHovered ? 60 : 15;
   const mouse = {
     x: useMotionValue(0),
@@ -20,7 +20,7 @@ export const StickyCursor = ({ stickyElement }) => {
 
   const manageMouseMove = (e) => {
     const { clientX, clientY } = e;
-    const { left, top, height, width } = stickyElement.current.getBoundingClientRect();
+    const { left, top, height, width } = stickyElement.current?.getBoundingClientRect() || {};
 
     //center position of the stickyElement
     const center = { x: left + width / 2, y: top + height / 2 };
@@ -47,16 +47,17 @@ export const StickyCursor = ({ stickyElement }) => {
   };
 
   useEffect(() => {
-    stickyElement.current.addEventListener('mouseenter', manageMouseOver);
-    stickyElement.current.addEventListener('mouseleave', manageMouseLeave);
+    stickyElement.current?.addEventListener('mouseenter', manageMouseOver);
+    stickyElement.current?.addEventListener('mouseleave', manageMouseLeave);
     window.addEventListener('mousemove', manageMouseMove);
 
     return () => {
-      stickyElement.current.removeEventListener('mouseenter', manageMouseOver);
-      stickyElement.current.removeEventListener('mouseleave', manageMouseLeave);
+      stickyElement.current?.removeEventListener('mouseenter', manageMouseOver);
+      stickyElement.current?.removeEventListener('mouseleave', manageMouseLeave);
       window.removeEventListener('mousemove', manageMouseMove);
     };
   }, [isHovered]);
+  if (mdw) return null;
   return (
     <div
       onMouseMove={manageMouseMove}

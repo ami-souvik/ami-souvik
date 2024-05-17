@@ -6,7 +6,6 @@ export * from './NavigationBar';
 export * from './NavigationDrawer';
 export * from './Header';
 export * from './Footer';
-export * from './FooterItem';
 export * from './Clickable';
 export * from './Badge';
 export * from './WorkSummary';

@@ -11,7 +11,6 @@ const StyledAction = styled(Link)(({ disabled, theme }) => ({
   color: theme.palette.text.primary,
   borderRadius: 12,
   padding: '2px 16px',
-  cursor: 'none',
 }));
 
 export const NavigationBar = ({ state, routes, click }) => {

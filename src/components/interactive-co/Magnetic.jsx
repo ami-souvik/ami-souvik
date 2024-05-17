@@ -1,7 +1,9 @@
 import { forwardRef, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import { useMediaQuery } from '@mui/material';
 
 export const Magnetic = forwardRef(({ children }, ref) => {
+  const mdw = useMediaQuery((theme) => theme.breakpoints.down('md'));
   const magneticRef = useRef(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
@@ -19,6 +21,7 @@ export const Magnetic = forwardRef(({ children }, ref) => {
   };
 
   const { x, y } = position;
+  if (mdw) return children;
   return (
     <motion.div
       style={{ position: 'relative' }}
