@@ -6,9 +6,10 @@ export const Header = forwardRef((props, ref) => {
   const theme = useTheme();
   const mdw = useMediaQuery(theme.breakpoints.down('md'));
   return (
-    <Stack>
+    <Stack px={mdw ? '24px' : '48px'} alignItems="center">
       <Stack
-        p={mdw ? '6px 24px' : '12px 48px'}
+        width="100%"
+        py={mdw ? '6px' : '12px'}
         direction="row"
         justifyContent="space-between"
         alignItems="center"
@@ -20,6 +21,10 @@ export const Header = forwardRef((props, ref) => {
           <ToggleMode />
         </Magnetic>
       </Stack>
+      {/* <Divider
+        border={`1px solid ${theme.palette.text.primary}2a`}
+        sx={{ width: `calc(100% - ${mdw ? '24px' : '48px'})` }}
+      /> */}
     </Stack>
   );
 });

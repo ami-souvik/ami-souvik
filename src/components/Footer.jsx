@@ -13,7 +13,7 @@ export const Footer = () => {
         justifyContent="space-between"
         border={`1px solid ${theme.palette.text.primary}`}
         sx={{
-          padding: '24px 96px 24px 48px',
+          padding: mdw ? '24px 12px' : '24px 96px 24px 48px',
         }}
       >
         <Stack>

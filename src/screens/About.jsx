@@ -12,18 +12,24 @@ export const About = () => {
       direction={mdw ? 'column' : 'row'}
       justifyContent="space-between"
       sx={{
-        padding: '48px',
+        padding: mdw ? '12px' : '48px',
         marginY: '24px',
       }}
     >
       <Stack spacing={2} sx={{ width: mdw ? '100%' : '50%' }}>
-        <Typography>As Freelance Professional</Typography>
-        <Typography variant="h3">Creating Stunning Websites That Stand Out</Typography>
+        <Stack>
+          <Typography>AIM</Typography>
+          <Typography variant="h2" fontWeight={400}>
+            Creating stunning websites
+          </Typography>
+          <Typography variant="h2" fontWeight={400}>
+            that <strong>STAND OUT</strong>
+          </Typography>
+        </Stack>
         <Typography>
           Welcome to my portfolio website, where I showcase my expertise in web design and development. I am passionate
           about creating visually appealing and user-friendly websites that leave a lasting impression.
         </Typography>
-        <ProcessIndicator data={process} />
       </Stack>
       <Stack spacing={2} sx={{ width: mdw ? '100%' : '50%' }}></Stack>
     </Stack>

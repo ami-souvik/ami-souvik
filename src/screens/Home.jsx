@@ -20,27 +20,19 @@ export const Home = (props) => {
     <section ref={sectionRef}>
       <Stack spacing={4} marginLeft="-32px">
         <Grid container sx={{ width: '100%' }} spacing={4}>
-          <Grid item xs={12}>
-            <Box p={mdw ? '0px' : '48px 24px'} sx={{ userSelect: 'none' }}>
-              <Typography variant="h1">I will help you build the</Typography>
-              <Typography variant="h1" marginTop={mdw ? '0px' : '-16px'}>
+          <Grid item xs={mdw ? 12 : 8}>
+            <Stack height="100%" p={mdw ? '0px' : '48px 24px'} justifyContent="center" sx={{ userSelect: 'none' }}>
+              <Typography variant="h1" fontWeight={600}>
+                I will help you build the
+              </Typography>
+              <Typography variant="h1" fontWeight={600} marginTop={mdw ? '0px' : '-16px'}>
                 platform of your{' '}
                 <Typography variant="signh1" fontFamily="SignPainter-B">
                   dreams
                 </Typography>
               </Typography>
               <Typography>I'm a Freelance Professional working remotely from Kolkata, India.</Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={mdw ? 12 : 8}>
-            <Box
-              p="48px 24px"
-              bgcolor="secondary.main"
-              boxShadow={`0px 0px 12px -4px ${theme.palette.primary.main}44`}
-              borderRadius="24px"
-            >
-              <ProcessIndicator data={process} />
-            </Box>
+            </Stack>
           </Grid>
           <Grid item xs={mdw ? 12 : 4} sx={{ display: 'flex', justifyContent: 'center' }}>
             <Stack
@@ -100,6 +92,16 @@ export const Home = (props) => {
               </Stack>
             </Stack>
           </Grid>
+          {/* <Grid item xs={mdw ? 12 : 8}>
+            <Box
+              p="48px 24px"
+              bgcolor="secondary.main"
+              boxShadow={`0px 0px 12px -4px ${theme.palette.primary.main}44`}
+              borderRadius="24px"
+            >
+              <ProcessIndicator data={process} />
+            </Box>
+          </Grid> */}
         </Grid>
       </Stack>
       <About />
@@ -111,7 +113,7 @@ export const Home = (props) => {
         justifyContent="space-between"
         border={`1px solid ${theme.palette.text.primary}`}
         sx={{
-          padding: '24px 96px 24px 48px',
+          padding: mdw ? '24px 12px' : '24px 96px 24px 48px',
           marginY: '24px',
         }}
       >
