@@ -1,4 +1,4 @@
-import { Home, About, Work, Blogs, Contact, LandingPageTemplate } from '@screens';
+import { Home, Resources } from '@screens';
 
 export const routes = [
 	{
@@ -7,29 +7,14 @@ export const routes = [
 		component: Home
 	},
 	{
-		href: '/about',
-		label: 'About',
-		component: About
+		href: '/#about',
+		label: 'About Me'
 	},
 	{
-		href: '/work',
-		label: 'Work',
-		component: Work
-	},
-	{
-		href: '/stories',
-		label: 'Stories',
-		component: Blogs
-	},
-	{
-		href: '/contact',
-		label: 'Contact',
-		component: Contact
-	},
-	{
-		href: '/docs/react-vite-landing-page-bp',
-		component: LandingPageTemplate
-	},
+		href: '/resources',
+		label: 'Resources',
+		component: Resources
+	}
 ];
 
 export const getRouteIndex = (href) => {

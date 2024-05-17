@@ -2,6 +2,7 @@ import { Stack, Link, Typography, Box } from '@mui/material';
 import { keyframes, styled } from '@mui/material/styles';
 import { useRouter } from '@context';
 import { getRouteIndex } from '@config';
+import { Magnetic } from '@components';
 
 const StyledAction = styled(Link)(({ disabled, theme }) => ({
   textDecoration: 'none',
@@ -10,6 +11,7 @@ const StyledAction = styled(Link)(({ disabled, theme }) => ({
   color: theme.palette.text.primary,
   borderRadius: 12,
   padding: '2px 16px',
+  cursor: 'none',
 }));
 
 export const NavigationBar = ({ state, routes, click }) => {
@@ -30,9 +32,11 @@ export const NavigationBar = ({ state, routes, click }) => {
     <Stack direction="row" alignItems="center" spacing={1}>
       {routes.map((route, index) => (
         <Stack key={route.href} sx={{ position: 'relative' }}>
-          <StyledAction disabled={state.href === route.href} href={route.href} onClick={(e) => click(e, route.href)}>
-            <Typography fontFamily="Outfit">{route.label}</Typography>
-          </StyledAction>
+          <Magnetic>
+            <StyledAction disabled={state.href === route.href} href={route.href} onClick={(e) => click(e, route.href)}>
+              <Typography fontFamily="Outfit">{route.label}</Typography>
+            </StyledAction>
+          </Magnetic>
           {state.href === route.href && (
             <Box
               height="28px"

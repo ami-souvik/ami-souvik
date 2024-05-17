@@ -2,6 +2,7 @@ import { Switch, styled, useTheme } from '@mui/material';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { useApp } from '@context';
+import { forwardRef } from 'react';
 
 const Toggle = styled(Switch)(({ theme }) => ({
   width: 52,

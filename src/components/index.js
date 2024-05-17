@@ -1,4 +1,4 @@
-export * from './Background';
+export * from './Container';
 export * from './ToggleMode';
 export * from './Logo';
 export * from './Title';

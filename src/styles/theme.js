@@ -15,7 +15,10 @@ export const getDesignTokens = (mode) => {
             },
             highlight: {
               main: '#ffe66d'
-            }
+            },
+            text: {
+              primary: '#121212',
+            },
           }
         : {
             primary: {
@@ -29,7 +32,10 @@ export const getDesignTokens = (mode) => {
             },
             highlight: {
               main: '#ffe66d'
-            }
+            },
+            text: {
+              primary: '#ffffff',
+            },
           }),
     },
     typography: {

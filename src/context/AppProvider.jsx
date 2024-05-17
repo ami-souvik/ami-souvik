@@ -12,16 +12,9 @@ export const useApp = () => {
 export const AppProvider = ({ children }) => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const [mode, setMode] = useState(prefersDarkMode ? 'dark' : 'light');
-  const [sectionHeight, setSectionHeight] = useState(window.innerHeight);
   const toggleMode = () => setMode((mode) => (mode === 'light' ? 'dark' : 'light'));
-  const sectionRef = useRef(null);
-  useEffect(() => {
-    if (sectionRef.current) {
-      setSectionHeight(sectionRef.current.clientHeight);
-    }
-  }, []);
   return (
-    <AppContext.Provider value={{ mode, section: { ref: sectionRef, height: sectionHeight }, toggleMode }}>
+    <AppContext.Provider value={{ mode, toggleMode }}>
       <Provider store={store}>{children}</Provider>
     </AppContext.Provider>
   );

@@ -1,7 +1,7 @@
 {
   "type": "module",
-  "name": "react-vite-landing-page-bp",
-  "description": "React Vite Landing Page Boilerplate",
+  "name": "my-portfolio",
+  "description": "My portfolio",
   "version": "1.0.0",
   "private": false,
   "dependencies": {
@@ -18,7 +18,7 @@
     "axios": "^1.6.8",
     "dayjs": "^1.11.11",
     "dotenv": "^16.4.5",
-    "p5": "^1.9.3",
+    "framer-motion": "^11.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.2",

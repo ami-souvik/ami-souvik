@@ -49,7 +49,7 @@ export const Home = (props) => {
               height="100%"
               border="8px solid #fff"
               borderRadius="24px"
-              bgcolor="#272727"
+              bgcolor="#121212"
               boxShadow={`0px 0px 12px -4px ${theme.palette.primary.main}44`}
             >
               <Stack
@@ -102,19 +102,19 @@ export const Home = (props) => {
         </Grid>
         <Grid container spacing={4} sx={{ width: '100%' }}>
           <Grid item xs={4}>
-            <Stack width="100%" height="48px" bgcolor="#12121222" borderRadius="12px" />
+            <Stack width="100%" height="48px" bgcolor="text.primary" sx={{ opacity: 0.2 }} borderRadius="12px" />
           </Grid>
           <Grid item xs={8}>
-            <Stack width="100%" height="48px" bgcolor="#12121244" borderRadius="12px" />
+            <Stack width="100%" height="48px" bgcolor="text.primary" sx={{ opacity: 0.2 }} borderRadius="12px" />
           </Grid>
           <Grid item xs={4}>
-            <Stack width="100%" height="48px" bgcolor="#12121266" borderRadius="12px" />
+            <Stack width="100%" height="48px" bgcolor="text.primary" sx={{ opacity: 0.2 }} borderRadius="12px" />
           </Grid>
           <Grid item xs={4}>
-            <Stack width="100%" height="48px" bgcolor="#12121288" borderRadius="12px" />
+            <Stack width="100%" height="48px" bgcolor="text.primary" sx={{ opacity: 0.2 }} borderRadius="12px" />
           </Grid>
           <Grid item xs={4}>
-            <Stack width="100%" height="48px" bgcolor="#121212aa" borderRadius="12px" />
+            <Stack width="100%" height="48px" bgcolor="text.primary" sx={{ opacity: 0.2 }} borderRadius="12px" />
           </Grid>
         </Grid>
       </Stack>
