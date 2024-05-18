@@ -12,3 +12,5 @@ export * from './WorkSummary';
 export * from './Image';
 export * from './Navigator';
 export * from './interactive-co';
+export * from './static-co';
+export * from './magicui-co';

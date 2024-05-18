@@ -103,11 +103,13 @@ export const getDesignTokens = (mode) => {
   theme.typography.signh1 = {
     fontSize: '1rem',
     fontWeight: 400,
+    fontFamily: 'SignPainter-B',
     ...signh1breakpoints
   };
   theme.typography.signh2 = {
     fontSize: '1rem',
     fontWeight: 400,
+    fontFamily: 'SignPainter-B',
     ...signh2breakpoints
   };
   return responsiveFontSizes(theme);

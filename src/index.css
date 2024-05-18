@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: SignPainter-B;
   src: url(./assets/SignPainterHouseScript.ttf);

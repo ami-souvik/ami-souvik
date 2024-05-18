@@ -1,6 +1,4 @@
 import { Stack, Typography, useMediaQuery } from '@mui/material';
-import { ProcessIndicator } from '@components';
-import { process } from '@config';
 
 export const About = () => {
   const mdw = useMediaQuery((theme) => theme.breakpoints.down('md'));
@@ -23,7 +21,7 @@ export const About = () => {
             Creating stunning websites
           </Typography>
           <Typography variant="h2" fontWeight={400}>
-            that <strong>STAND OUT</strong>
+            that <Typography variant="signh2">Stand Out</Typography>
           </Typography>
         </Stack>
         <Typography>
