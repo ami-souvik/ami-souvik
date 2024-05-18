@@ -1,4 +1,4 @@
-import { Box, Divider, Grid, Link, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Grid, Link, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import sav from '@assets/sav.jpg';
 import react from '@assets/react.png';
 import webflow from '@assets/webflow.png';
@@ -8,7 +8,8 @@ import figma from '@assets/figma.png';
 import github from '@assets/github.png';
 import threejs from '@assets/threejs.png';
 import framerMotion from '@assets/framer-motion.png';
-import { Section, BorderBeam } from '@components';
+import { Section, BorderBeam, Steps } from '@components';
+import { devProcess } from '@config';
 
 export const Home = (props) => {
   const { sectionRef } = props;
@@ -27,6 +28,7 @@ export const Home = (props) => {
                 platform of your <Typography variant="signh1">dreams</Typography>
               </Typography>
               <Typography>I'm a Freelance Professional working remotely from Kolkata, India.</Typography>
+              <Steps data={devProcess} />
             </Stack>
           </Grid>
           <Grid item xs={mdw ? 12 : 4} sx={{ display: 'flex', justifyContent: 'center' }}>

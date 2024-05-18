@@ -5,7 +5,7 @@ import optimize from '@assets/optimize.png';
 import deploy from '@assets/deploy.png';
 import monitor from '@assets/monitor.png';
 
-export const process = [
+export const devProcess = [
     {
         title: "Plan",
         subtitle: "Discovery and Planning",
