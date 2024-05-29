@@ -1,4 +1,3 @@
-import { Children } from 'react';
 import { useMediaQuery } from '@mui/material';
 import { cn } from '@utils';
 
