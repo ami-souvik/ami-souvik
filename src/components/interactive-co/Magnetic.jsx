@@ -2,7 +2,7 @@ import { forwardRef, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useMediaQuery } from '@mui/material';
 
-export const Magnetic = forwardRef(({ children }, ref) => {
+export const Magnetic = forwardRef(({ offset = 20, children }, ref) => {
   const mdw = useMediaQuery((theme) => theme.breakpoints.down('md'));
   const magneticRef = useRef(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -11,9 +11,9 @@ export const Magnetic = forwardRef(({ children }, ref) => {
   const handleMouse = (e) => {
     const { clientX, clientY } = e;
     const { height, width, left, top } = magneticRef.current.getBoundingClientRect();
-    const middleX = clientX - (left + width / 2);
-    const middleY = clientY - (top + height / 2);
-    setPosition({ x: middleX, y: middleY });
+    const cursorX = clientX - (left + width / 2);
+    const cursorY = clientY - (top + height / 2);
+    setPosition({ x: (cursorX * offset) / width, y: (cursorY * offset) / height });
   };
 
   const reset = () => {

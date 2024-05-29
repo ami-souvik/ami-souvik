@@ -1,4 +1,7 @@
-import { Box, Grid, Link, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Section, BorderBeam, DotPattern, WordRotate } from '@components';
+import { devProcess } from '@config';
+import { Resources, Showcase } from '@screens';
+import { cn } from '@utils';
 import sav from '@assets/sav.jpg';
 import react from '@assets/react.png';
 import webflow from '@assets/webflow.png';
@@ -8,116 +11,112 @@ import figma from '@assets/figma.png';
 import github from '@assets/github.png';
 import threejs from '@assets/threejs.png';
 import framerMotion from '@assets/framer-motion.png';
-import { Section, BorderBeam, Steps } from '@components';
-import { devProcess } from '@config';
 
 export const Home = (props) => {
   const { sectionRef } = props;
-  const theme = useTheme();
-  const mdw = useMediaQuery((theme) => theme.breakpoints.down('md'));
   return (
     <section ref={sectionRef}>
-      <Stack spacing={4} marginLeft="-32px">
-        <Grid container sx={{ width: '100%' }} spacing={4}>
-          <Grid item xs={mdw ? 12 : 8}>
-            <Stack height="100%" p={mdw ? '0px' : '48px 24px'} justifyContent="center" sx={{ userSelect: 'none' }}>
-              <Typography variant="h1" fontWeight={600}>
-                I will help you build the
-              </Typography>
-              <Typography variant="h1" fontWeight={600} marginTop={mdw ? '0px' : '-16px'}>
-                platform of your <Typography variant="signh1">dreams</Typography>
-              </Typography>
-              <Typography>I'm a Freelance Professional working remotely from Kolkata, India.</Typography>
-              <Steps data={devProcess} />
-            </Stack>
-          </Grid>
-          <Grid item xs={mdw ? 12 : 4} sx={{ display: 'flex', justifyContent: 'center' }}>
-            <div className="relative p-[32px] rounded-xl space-y-4 border-[1px solid]">
-              <BorderBeam />
-              <Stack
-                sx={{
-                  position: 'absolute',
-                  top: 6,
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  alignItems: 'center',
-                  marginTop: '-12px',
-                }}
-              >
-                <div className="w-[80px] h-[4px] bg-primary-main dark:bg-white rounded-xl" />
-              </Stack>
-              <Stack direction="row" spacing={4} justifyContent="space-between" alignItems="flex-end">
-                <Typography variant="signh2" fontFamily="SignPainter-B">
-                  Sav
-                </Typography>
-                <img
-                  src={sav}
-                  style={{
-                    height: '120px',
-                    width: '100px',
-                    objectFit: 'cover',
-                    borderRadius: '12px',
-                    border: '2px solid #fff',
-                  }}
-                />
-              </Stack>
-              <hr className="opacity-[1]" />
-              <Stack direction="row" spacing={1} alignItems="center">
-                <img src={react} style={{ width: '24px', objectFit: 'contain' }} />
-                <img src={webflow} style={{ width: '24px', objectFit: 'contain' }} />
-                <img src={tailwind} style={{ width: '24px', objectFit: 'contain' }} />
-                <img src={framer} style={{ width: '24px', objectFit: 'contain' }} />
-              </Stack>
-              <Stack direction="row" spacing={1} alignItems="center">
-                <img src={figma} style={{ width: '24px', objectFit: 'contain' }} />
-                <img src={github} style={{ width: '24px', objectFit: 'contain' }} />
-              </Stack>
-              <Stack direction="row" spacing={1} alignItems="center">
-                <Box p="3px" bgcolor="#fff" borderRadius="4px" lineHeight={0}>
-                  <img src={threejs} style={{ width: '20px', objectFit: 'contain' }} />
-                </Box>
-                <Typography>GSAP</Typography>
-                <img src={framerMotion} style={{ width: '20px', objectFit: 'contain' }} />
-              </Stack>
+      <div className="grid grid-cols-1 md:grid-cols-6 grid-rows-none md:grid-rows-6 gap-4">
+        <div className="col-span-3 row-span-3">
+          <div className="flex flex-col justify-center select-none px-0 md:px-6 py-0 md:py-12 space-y-4">
+            <div>
+              <h1 className="text-3xl md:text-5xl">I will help you build the</h1>
+              <h1 className="text-3xl md:text-5xl">
+                platform of your <span className="text-5xl md:text-7xl font-curvy">dreams</span>
+              </h1>
             </div>
-            {/* </Stack> */}
-          </Grid>
-        </Grid>
-      </Stack>
-      <Section>
-        <Stack spacing={2}>
-          <Stack>
-            <Typography>AIM</Typography>
-            <Typography variant="h2" fontWeight={400}>
-              Creating stunning websites
-            </Typography>
-            <Typography variant="h2" fontWeight={400}>
-              that <Typography variant="signh2">Stand Out</Typography>
-            </Typography>
-          </Stack>
-          <Typography>
-            Welcome to my portfolio website, where I showcase my expertise in web design and development. I am
-            passionate about creating visually appealing and user-friendly websites that leave a lasting impression.
-          </Typography>
-        </Stack>
-        <Stack spacing={2}></Stack>
-      </Section>
-      <Section border>
-        <Stack spacing={1} justifyContent="center">
-          <Typography>Connect</Typography>
-          <Typography variant="h3">Get in Touch</Typography>
-          <Typography>I'd love to hear from you, for any inquiries or collaborations.</Typography>
-        </Stack>
-        <Stack spacing={1}>
-          <Typography fontWeight={600}>Email</Typography>
-          <Link href="mailto:dsouvik141@gmail.com">
-            <Typography>dsouvik141@gmail.com</Typography>
-          </Link>
-          <Typography fontWeight={600}>Phone</Typography>
-          <Link href="tel:919062786568">
-            <Typography>+91-9062786568</Typography>
-          </Link>
-        </Stack>
+            <h2 className="text-xl md:text-2xl font-light">
+              I'm a Freelance Professional working remotely from Kolkata, India.
+            </h2>
+          </div>
+        </div>
+        <div className="col-span-3 row-span-3 col-start-4">
+          <div className="relative flex flex-col h-full w-full items-start justify-center overflow-hidden rounded-lg border bg-background p-8 md:shadow-xl">
+            <DotPattern className={cn('[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]')} />
+          </div>
+        </div>
+        <div className="col-span-3 row-span-3 border p-8">
+          <p>AIM</p>
+          <h3 className="text-xl md:text-3xl">
+            Creating stunning websites that <span className="text-3xl md:text-5xl font-curvy">Stand Out</span>
+          </h3>
+        </div>
+        <div className="flex justify-center col-span-2 row-span-3 col-start-5 row-start-4">
+          <div className="relative p-[32px] rounded-xl space-y-4 border md:shadow-xl z-10">
+            <BorderBeam />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="w-[80px] h-[4px] bg-primary-main dark:bg-white rounded-xl" />
+            </div>
+            <div className="flex space-x-8 justify-between items-end">
+              <p className="text-5xl md:text-7xl font-curvy">Sav</p>
+              <img
+                src={sav}
+                alt="sav"
+                style={{
+                  height: '120px',
+                  width: '100px',
+                  objectFit: 'cover',
+                  borderRadius: '12px',
+                  border: '2px solid #fff',
+                }}
+              />
+            </div>
+            <hr className="opacity-[1]" />
+            <div className="flex space-x-1 items-center">
+              <img src={react} alt="react logo" style={{ width: '24px', objectFit: 'contain' }} />
+              <img src={webflow} alt="webflow logo" style={{ width: '24px', objectFit: 'contain' }} />
+              <img src={tailwind} alt="tailwindcss logo" style={{ width: '24px', objectFit: 'contain' }} />
+              <img src={framer} alt="framer logo" style={{ width: '24px', objectFit: 'contain' }} />
+            </div>
+            <div className="flex space-x-1 items-center">
+              <img src={figma} alt="figma logo" style={{ width: '24px', objectFit: 'contain' }} />
+              <img src={github} alt="github logo" style={{ width: '24px', objectFit: 'contain' }} />
+            </div>
+            <div className="flex space-x-1 items-center">
+              <div className="p-0.5 bg-white rounded">
+                <img src={threejs} alt="threejs logo" style={{ width: '20px', objectFit: 'contain' }} />
+              </div>
+              <img src={framerMotion} alt="framer motion logo" style={{ width: '20px', objectFit: 'contain' }} />
+            </div>
+          </div>
+        </div>
+        <div className="row-span-2 col-start-4 row-start-5">
+          <div className="relative flex flex-col h-full w-full items-start justify-center overflow-hidden rounded-lg border bg-background px-6 py-2 md:shadow-xl">
+            <WordRotate
+              words={devProcess.map(({ title, subtitle }, index) => (
+                <div className="space-y-2">
+                  <p className="text-6xl font-light">{index + 1}</p>
+                  <p className="text-4xl font-medium">{title}</p>
+                  <p className="text-xl font-light">{subtitle}</p>
+                </div>
+              ))}
+            />
+            <DotPattern className={cn('[mask-image:radial-gradient(120px_circle_at_center,white,transparent)]')} />
+          </div>
+        </div>
+        <div className="col-start-4 row-start-4 space-y-2">
+          <p className="text-xl font-bold">flooke</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+      <Showcase />
+      <Resources />
+      <Section className="border">
+        <div className="space-y-2">
+          <p>CONNECT</p>
+          <h3 className="text-xl md:text-3xl font-bold">Get in Touch</h3>
+          <p>I'd love to hear from you, for any inquiries or collaborations.</p>
+        </div>
+        <div className="space-y-4" spacing={1}>
+          <p className="font-bold">Email</p>
+          <a href="mailto:dsouvik141@gmail.com" className="underline underline-offset-4">
+            <p>dsouvik141@gmail.com</p>
+          </a>
+          <p className="font-bold">Phone</p>
+          <a href="tel:919062786568" className="underline underline-offset-4">
+            <p>+91-9062786568</p>
+          </a>
+        </div>
       </Section>
     </section>
   );

@@ -1,10 +1,14 @@
-export default {
+const config = {
   darkMode: 'selector',
   content: [
     "./index.html",
     "./src/**/*.{js,jsx}",
   ],
   theme: {
+    fontFamily: {
+      'sans': ['Outfit', 'system-ui'],
+      'curvy': ['SignPainter']
+    },
     extend: {
       colors: {
         'primary-main': '#121212',
@@ -24,3 +28,4 @@ export default {
   plugins: [],
 }
 
+export default config;

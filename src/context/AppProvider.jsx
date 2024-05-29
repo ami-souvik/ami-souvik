@@ -10,7 +10,8 @@ export const useApp = () => {
 };
 
 export const AppProvider = ({ children }) => {
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  // const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const prefersDarkMode = false;
   const [mode, setMode] = useState(prefersDarkMode ? 'dark' : 'light');
   const toggleMode = () => {
     setMode((mode) => (mode === 'light' ? 'dark' : 'light'));

@@ -3,9 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: SignPainter-B;
+  font-family: SignPainter;
   src: url(./assets/SignPainterHouseScript.ttf);
-  font-weight: 800;
 }
 :root {
   /** Primary colors */
@@ -16,11 +15,9 @@
 }
 body {
   margin: 0;
-  background-color: #eef5db;
 }
-#water-ripple-canvas {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: -1;
+
+h3 {
+  font-size: 1.85rem;
+  line-height: 2rem;
 }

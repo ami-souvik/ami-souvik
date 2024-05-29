@@ -1,24 +1,21 @@
 import React from 'react';
-import { Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { Section, Title } from '@components';
 
 export const Footer = () => {
-  const theme = useTheme();
-  const mdw = useMediaQuery((theme) => theme.breakpoints.down('md'));
   return (
-    <Stack padding={mdw ? '6px 24px' : '12px 48px'}>
-      <Section border>
-        <Stack>
+    <div className="flex flex-col px-12 py-2">
+      <Section className="border">
+        <div>
           <Title />
-        </Stack>
-        <Stack spacing={2}>
-          <Typography fontWeight={800}>Follow</Typography>
-          <Typography>Figma</Typography>
-          <Typography>Instagram</Typography>
-          <Typography>LinkedIn</Typography>
-        </Stack>
+        </div>
+        <div className="flex flex-col space-y-2">
+          <p className="font-bold">Follow</p>
+          <p>Figma</p>
+          <p>Instagram</p>
+          <p>LinkedIn</p>
+        </div>
       </Section>
-      <Typography alignSelf="flex-end">© 2024 Sav • Kolkata • All rights reserved</Typography>
-    </Stack>
+      <p className=" pt-2 self-end">© 2024 flooke • All rights reserved</p>
+    </div>
   );
 };

@@ -2,7 +2,7 @@ import { useMemo, useRef } from 'react';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { routes } from '@config';
 import { Route, RouterProvider, Routes, useApp } from '@context';
-import { Container, Footer, Header, StickyCursor } from '@components';
+import { Footer, Header, StickyCursor } from '@components';
 import { getDesignTokens } from '@styles';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <StickyCursor stickyElement={stickyElement} />
-      <Container>
+      <div className="min-h-screen bg-white dark:bg-primary-main">
         <CssBaseline />
         <RouterProvider href="/">
           <Header ref={stickyElement} />
@@ -22,7 +22,7 @@ function App() {
             ))}
           </Routes>
         </RouterProvider>
-      </Container>
+      </div>
       <Footer />
     </ThemeProvider>
   );

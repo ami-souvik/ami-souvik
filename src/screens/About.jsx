@@ -21,7 +21,7 @@ export const About = () => {
             Creating stunning websites
           </Typography>
           <Typography variant="h2" fontWeight={400}>
-            that <Typography variant="signh2">Stand Out</Typography>
+            that <p className="font-curvy">Stand Out</p>
           </Typography>
         </Stack>
         <Typography>
