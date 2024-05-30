@@ -22,17 +22,17 @@ export const NavigationDrawer = ({ state, routes, click }) => {
   };
   var lastScrollTop; // This Varibale will store the top position
   const navbar = document.getElementById('drawer-navigation-section');
-  addEventListener('scroll', (e) => {
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > lastScrollTop) {
-      //if it will be greater than the previous
-      navbar.style.bottom = '-80px';
-      //set the value to the negetive of height of navbar
-    } else {
-      navbar.style.bottom = '0px';
-    }
-    lastScrollTop = scrollTop;
-  });
+  // addEventListener('scroll', (e) => {
+  //   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  //   if (scrollTop > lastScrollTop) {
+  //     //if it will be greater than the previous
+  //     navbar.style.bottom = '-80px';
+  //     //set the value to the negetive of height of navbar
+  //   } else {
+  //     navbar.style.bottom = '0px';
+  //   }
+  //   lastScrollTop = scrollTop;
+  // });
   return (
     <>
       <Drawer anchor="bottom" open={open} onClose={toggleDrawer(false)}>

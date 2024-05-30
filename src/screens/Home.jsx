@@ -16,8 +16,8 @@ export const Home = (props) => {
   const { sectionRef } = props;
   return (
     <section ref={sectionRef}>
-      <div className="grid grid-cols-1 md:grid-cols-6 grid-rows-none md:grid-rows-6 gap-4">
-        <div className="col-span-3 row-span-3">
+      <div className="grid grid-cols-6 gap-4">
+        <div className="col-span-6 md:col-span-3 row-span-1 md:row-span-3">
           <div className="flex flex-col justify-center select-none px-0 md:px-6 py-0 md:py-12 space-y-4">
             <div>
               <h1 className="text-3xl md:text-5xl">I will help you build the</h1>
@@ -30,18 +30,18 @@ export const Home = (props) => {
             </h2>
           </div>
         </div>
-        <div className="col-span-3 row-span-3 col-start-4">
+        <div className="col-span-6 md:col-span-3 row-span-1 md:row-span-3 col-start-1 md:col-start-4">
           <div className="relative flex flex-col h-full w-full items-start justify-center overflow-hidden rounded-lg border bg-background p-8 md:shadow-xl">
             <DotPattern className={cn('[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]')} />
           </div>
         </div>
-        <div className="col-span-3 row-span-3 border p-8">
+        <div className="col-span-6 md:col-span-3 row-span-1 md:row-span-3 col-start-1 border p-8">
           <p>AIM</p>
           <h3 className="text-xl md:text-3xl">
             Creating stunning websites that <span className="text-3xl md:text-5xl font-curvy">Stand Out</span>
           </h3>
         </div>
-        <div className="flex justify-center col-span-2 row-span-3 col-start-5 row-start-4">
+        <div className="flex justify-center col-span-6 md:col-span-2 row-span-1 md:row-span-3 col-start-1 mb:col-start-5 row-start-4 mb:row-start-4">
           <div className="relative p-[32px] rounded-xl space-y-4 border md:shadow-xl z-10">
             <BorderBeam />
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -80,7 +80,7 @@ export const Home = (props) => {
             </div>
           </div>
         </div>
-        <div className="row-span-2 col-start-4 row-start-5">
+        <div className="col-span-3 md:col-span-1 row-span-1 md:row-span-2 col-start-1 md:col-start-4 row-start-5">
           <div className="relative flex flex-col h-full w-full items-start justify-center overflow-hidden rounded-lg border bg-background px-6 py-2 md:shadow-xl">
             <WordRotate
               words={devProcess.map(({ title, subtitle }, index) => (
@@ -94,7 +94,7 @@ export const Home = (props) => {
             <DotPattern className={cn('[mask-image:radial-gradient(120px_circle_at_center,white,transparent)]')} />
           </div>
         </div>
-        <div className="col-start-4 row-start-4 space-y-2">
+        <div className="col-span-3 md:col-span-1 col-start-4 md:col-start-4 row-start-5 md:row-start-4 space-y-2">
           <p className="text-xl font-bold">flooke</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>

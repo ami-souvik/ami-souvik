@@ -7,8 +7,8 @@ export const NavigationBar = ({ state, routes, click }) => {
       {routes.map((route, index) => (
         <div key={index} className="relative">
           <Magnetic>
-            <a href={route.href} className="py-0.5 px-4" onClick={(e) => click(e, route.href)}>
-              <p className="no-underline select-none">{route.label}</p>
+            <a href={route.href} onClick={(e) => click(e, route.href)}>
+              <p className="py-0.5 px-4 no-underline select-none">{route.label}</p>
             </a>
           </Magnetic>
           {state.href === route.href && (

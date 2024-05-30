@@ -51,7 +51,7 @@ export const Routes = ({ children }) => {
 export const Route = ({ path, component, componentProps }) => {
   const mdw = useMediaQuery((theme) => theme.breakpoints.down('md'));
   if (path === window.location.pathname) {
-    return <Box m={mdw ? '6px 24px' : '12px 48px'}>{createElement(component, componentProps)}</Box>;
+    return <div className="px-6 mb:px-12 py-3">{createElement(component, componentProps)}</div>;
   }
   return <></>;
 };
