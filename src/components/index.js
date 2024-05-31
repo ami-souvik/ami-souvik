@@ -1,5 +1,4 @@
 export * from './Container';
-export * from './ToggleMode';
 export * from './Logo';
 export * from './Title';
 export * from './NavigationBar';
@@ -11,6 +10,7 @@ export * from './Badge';
 export * from './WorkSummary';
 export * from './Image';
 export * from './Navigator';
+export * from './form-co';
 export * from './interactive-co';
 export * from './static-co';
 export * from './magicui-co';

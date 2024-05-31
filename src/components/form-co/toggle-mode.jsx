@@ -1,8 +1,8 @@
 import { Switch, styled, useTheme } from '@mui/material';
+import { SunIcon, MoonIcon } from '@radix-ui/react-icons';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { useApp } from '@context';
-import { forwardRef } from 'react';
 
 const Toggle = styled(Switch)(({ theme }) => ({
   width: 52,
@@ -50,12 +50,13 @@ const Toggle = styled(Switch)(({ theme }) => ({
 
 export const ToggleMode = () => {
   const theme = useTheme();
-  const { toggleMode } = useApp();
+  const { mode, toggleMode } = useApp();
   return (
-    <Toggle
+    <div
+      className={`flex w-8 border rounded-xl p-0.5 ${mode === 'light' ? 'justify-start' : 'justify-end'}`}
       onClick={toggleMode}
-      checkedIcon={<LightModeIcon />}
-      icon={<DarkModeIcon htmlColor={theme.palette.secondary.main} />}
-    />
+    >
+      <div className="rounded-xl">{mode === 'light' ? <SunIcon color="black" /> : <MoonIcon color="white" />}</div>
+    </div>
   );
 };

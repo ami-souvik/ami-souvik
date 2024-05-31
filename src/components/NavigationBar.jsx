@@ -3,12 +3,12 @@ import { Magnetic } from '@components';
 
 export const NavigationBar = ({ state, routes, click }) => {
   return (
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center space-x-1">
       {routes.map((route, index) => (
         <div key={index} className="relative">
           <Magnetic>
             <a href={route.href} onClick={(e) => click(e, route.href)}>
-              <p className="py-0.5 px-4 no-underline select-none">{route.label}</p>
+              <p className="text-xs md:text-base py-0.5 px-2 md:px-4 no-underline select-none">{route.label}</p>
             </a>
           </Magnetic>
           {state.href === route.href && (
