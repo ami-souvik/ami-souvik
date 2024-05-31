@@ -13,6 +13,7 @@
       "@store": ["./store"],
       "@slice": ["./store/slice"],
       "@components": ["./components"],
+      "@resources": ["./resources"],
       "@webservices": ["./webservices"],
       "@utils": ["./utils"],
       "@styles": ["./styles"],

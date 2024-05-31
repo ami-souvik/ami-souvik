@@ -2,7 +2,7 @@ import { cn } from '@utils';
 import { Button } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-export const BentoCard = ({ name, className, background, Icon, tags, description, href, cta }) => (
+export const BentoCard = ({ name, className, background, tags, description, href, cta }) => (
   <div
     key={name}
     className={cn(

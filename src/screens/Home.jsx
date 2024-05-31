@@ -1,6 +1,6 @@
 import { Section, BorderBeam, DotPattern, WordRotate } from '@components';
 import { devProcess } from '@config';
-import { Resources, Showcase } from '@screens';
+import { ResourcePreview, Showcase, ToolsPreview } from '@screens';
 import { cn } from '@utils';
 import sav from '@assets/sav.jpg';
 import react from '@assets/react.png';
@@ -16,7 +16,7 @@ export const Home = (props) => {
   const { sectionRef } = props;
   return (
     <section ref={sectionRef}>
-      <div className="grid grid-cols-6 gap-4">
+      <div className="h-full grid grid-cols-6 gap-4">
         <div className="col-span-6 md:col-span-3 row-span-1 md:row-span-3">
           <div className="flex flex-col justify-center select-none px-0 md:px-6 py-0 md:py-12 space-y-4">
             <div>
@@ -99,8 +99,8 @@ export const Home = (props) => {
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
-      <Showcase />
-      <Resources />
+      <ToolsPreview />
+      <ResourcePreview />
       <Section className="border">
         <div className="space-y-2">
           <p>CONNECT</p>

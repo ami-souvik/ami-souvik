@@ -19,6 +19,7 @@ export default defineConfig({
       '@store': path.resolve(__dirname, './src/store'),
       '@slice': path.resolve(__dirname, './src/store/slice'),
       '@components': path.resolve(__dirname, './src/components'),
+      '@resources': path.resolve(__dirname, './src/resources'),
       '@webservices': path.resolve(__dirname, './src/webservices'),
       '@utils': path.resolve(__dirname, './src/utils'),
       '@styles': path.resolve(__dirname, './src/styles'),

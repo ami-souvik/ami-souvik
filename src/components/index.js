@@ -6,7 +6,6 @@ export * from './NavigationDrawer';
 export * from './Header';
 export * from './Footer';
 export * from './Clickable';
-export * from './Badge';
 export * from './WorkSummary';
 export * from './Image';
 export * from './Navigator';
