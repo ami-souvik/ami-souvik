@@ -1,20 +1,19 @@
 import { projects } from '@config';
-import { BentoCard, Section } from '@components';
+import { BentoCard } from '@components';
 
 export const ToolsPreview = () => (
-  <Section className="auto-rows-[24rem]">
-    <div className="auto-rows-[22rem] col-span-2 md:col-span-1 flex h-full flex-col justify-center space-y-2">
-      <p>SHOWCASE</p>
-      <h3 className="text-xl md:text-3xl">
-        Explore my selected <span className="text-3xl md:text-5xl font-curvy">projects</span> with detailed information
-      </h3>
-      <p>
-        Our team of skilled professionals specializes in full stack web development, delivering exceptional solutions
-        tailored to your needs.
-      </p>
+  <div className="w-full p-0 md:p-8 overflow-visible">
+    <div className="w-full auto-rows-[22rem] grid grid-cols-3 gap-4">
+      <div className="col-span-3 md:col-span-1 flex h-full flex-col justify-center space-y-2">
+        <p>SHOWCASE</p>
+        <h3 className="text-xl md:text-3xl">
+          Check out some of my selected <span className="text-3xl md:text-5xl font-curvy">tools</span>
+        </h3>
+        <p></p>
+      </div>
+      {projects.map((p) => (
+        <BentoCard {...p} />
+      ))}
     </div>
-    {projects.map((p) => (
-      <BentoCard {...p} />
-    ))}
-  </Section>
+  </div>
 );

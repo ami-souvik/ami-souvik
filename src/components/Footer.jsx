@@ -1,10 +1,10 @@
 import React from 'react';
-import { Section, Title } from '@components';
+import { Title } from '@components';
 
 export const Footer = () => {
   return (
-    <div className="flex flex-col px-12 py-2">
-      <Section className="border">
+    <div className="flex flex-col px-6 mb:px-12 py-3">
+      <div className="grid w-full grid-cols-2 gap-4 my-2 p-4 md:p-8 border">
         <div>
           <Title />
         </div>
@@ -14,8 +14,8 @@ export const Footer = () => {
           <p>Instagram</p>
           <p>LinkedIn</p>
         </div>
-      </Section>
-      <p className=" pt-2 self-end">© 2024 flooke • All rights reserved</p>
+      </div>
+      <p className=" pt-2 self-end line-through">© 2024 flooke • All rights reserved</p>
     </div>
   );
 };

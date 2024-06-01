@@ -1,6 +1,5 @@
-import { createElement } from 'react';
 import { useMediaQuery } from '@mui/material';
-import { NavigationDrawer, NavigationBar } from '@components';
+import { NavigationBar } from '@components';
 import { routes } from '@config';
 import { useRouter } from '@context';
 
@@ -12,6 +11,5 @@ export const Navigator = () => {
     navigate(href);
   };
   const navRoutes = routes.filter((r) => !!r.label);
-  // return createElement(mdw ? NavigationDrawer : NavigationBar, { state, routes: navRoutes, click });
   return <NavigationBar state={state} routes={navRoutes} click={click} />;
 };

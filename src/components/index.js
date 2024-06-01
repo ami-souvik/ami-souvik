@@ -2,7 +2,7 @@ export * from './Container';
 export * from './Logo';
 export * from './Title';
 export * from './NavigationBar';
-export * from './NavigationDrawer';
+export * from './drawer';
 export * from './Header';
 export * from './Footer';
 export * from './Clickable';

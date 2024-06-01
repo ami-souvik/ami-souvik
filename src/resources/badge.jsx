@@ -1,8 +1,8 @@
-import { useId, useState } from 'react';
+import { useId } from 'react';
 import { motion } from 'framer-motion';
 import { BellIcon } from '@radix-ui/react-icons';
 
-export const Badge = ({ label = 'SCROLL DOWN | SCROLL DOWN | SCROLL DOWN', size = 160, radius = 60 }) => {
+export const Badge = ({ label = 'NOTIFICATION | NOTIFICATION | NOTIFICATION', size = 160, radius = 60 }) => {
   const id = useId();
   const badgePathId = `${id}-path`;
   return (
@@ -13,10 +13,6 @@ export const Badge = ({ label = 'SCROLL DOWN | SCROLL DOWN | SCROLL DOWN', size 
         animate={{
           rotate: 360,
         }}
-        whileHover={{
-          rotate: 360,
-          transition: { repeat: Infinity, ease: 'linear', duration: 8 },
-        }}
         transition={{ repeat: Infinity, ease: 'easeInOut', duration: 4 }}
       >
         <div className="rounded-6xl">
@@ -24,17 +20,19 @@ export const Badge = ({ label = 'SCROLL DOWN | SCROLL DOWN | SCROLL DOWN', size 
             <path
               id={badgePathId}
               /*
-            M (CENTER_X - RADIUS), CENTER_Y
-            a RADIUS,RADIUS 0 1,1 (2 * RADIUS),0
-            RADIUS,RADIUS 0 1,1 (-2 * RADIUS),0
-            */
+              M (CENTER_X - RADIUS), CENTER_Y
+              a RADIUS,RADIUS 0 1,1 (2 * RADIUS),0
+              RADIUS,RADIUS 0 1,1 (-2 * RADIUS),0
+              */
               d={`M ${size / 2 - radius}, ${size / 2}
-            a ${radius},${radius} 0 1,1 ${2 * radius},0
-            ${radius},${radius} 0 1,1 -${2 * radius},0`}
+              a ${radius},${radius} 0 1,1 ${2 * radius},0
+              ${radius},${radius} 0 1,1 -${2 * radius},0`}
               fill="transparent"
             ></path>
-            <text className="text-xl">
-              <textPath href={`#${badgePathId}`}>{label}</textPath>
+            <text>
+              <textPath className="text-md text-black dark:text-white" href={`#${badgePathId}`}>
+                {label}
+              </textPath>
             </text>
           </svg>
         </div>

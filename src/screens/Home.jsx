@@ -1,4 +1,5 @@
-import { Section, BorderBeam, DotPattern, WordRotate } from '@components';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Section, BorderBeam, DotPattern, WordRotate, Button } from '@components';
 import { devProcess } from '@config';
 import { ResourcePreview, Showcase, ToolsPreview } from '@screens';
 import { cn } from '@utils';
@@ -17,29 +18,32 @@ export const Home = (props) => {
   return (
     <section ref={sectionRef}>
       <div className="h-full grid grid-cols-6 gap-4">
-        <div className="col-span-6 md:col-span-3 row-span-1 md:row-span-3">
-          <div className="flex flex-col justify-center select-none px-0 md:px-6 py-0 md:py-12 space-y-4">
+        <div className="col-span-6 row-span-1 md:row-span-3">
+          <div className="flex flex-col items-center select-none px-0 md:px-6 py-0 md:py-12 space-y-4">
+            <h1 className="text-3xl md:text-6xl align-center">
+              A collection of tools and resources for{' '}
+              <span className="text-6xl md:text-8xl font-curvy">developers</span>
+            </h1>
             <div>
-              <h1 className="text-3xl md:text-5xl">I will help you build the</h1>
-              <h1 className="text-3xl md:text-5xl">
-                platform of your <span className="text-5xl md:text-7xl font-curvy">dreams</span>
-              </h1>
+              <h2 className="text-md md:text-xl text-center font-light">
+                2+ tools for different use cases.
+                <ArrowForwardIcon fontSize="sm" />
+              </h2>
+              <h2 className="text-md md:text-xl text-center font-light">
+                5+ UI design components for your web development.
+                <ArrowForwardIcon fontSize="sm" />
+              </h2>
             </div>
-            <h2 className="text-xl md:text-2xl font-light">
-              I'm a Freelance Professional working remotely from Kolkata, India.
-            </h2>
           </div>
         </div>
-        <div className="col-span-6 md:col-span-3 row-span-1 md:row-span-3 col-start-1 md:col-start-4">
-          <div className="relative flex flex-col h-full w-full items-start justify-center overflow-hidden rounded-lg border bg-background p-8 md:shadow-xl">
+        <div className="col-span-6 md:col-span-3 row-span-1 md:row-span-3 col-start-1">
+          <div className="relative flex flex-col h-full w-full items-start justify-start overflow-hidden rounded-lg border bg-background p-8 md:shadow-xl">
+            <p>AIM</p>
+            <h3 className="text-xl md:text-3xl">
+              Creating stunning websites that <span className="text-3xl md:text-5xl font-curvy">Stand Out</span>
+            </h3>
             <DotPattern className={cn('[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]')} />
           </div>
-        </div>
-        <div className="col-span-6 md:col-span-3 row-span-1 md:row-span-3 col-start-1 border p-8">
-          <p>AIM</p>
-          <h3 className="text-xl md:text-3xl">
-            Creating stunning websites that <span className="text-3xl md:text-5xl font-curvy">Stand Out</span>
-          </h3>
         </div>
         <div className="flex justify-center col-span-6 md:col-span-2 row-span-1 md:row-span-3 col-start-1 mb:col-start-5 row-start-4 mb:row-start-4">
           <div className="relative p-[32px] rounded-xl space-y-4 border md:shadow-xl z-10">
@@ -63,20 +67,14 @@ export const Home = (props) => {
             </div>
             <hr className="opacity-[1]" />
             <div className="flex space-x-1 items-center">
-              <img src={react} alt="react logo" style={{ width: '24px', objectFit: 'contain' }} />
-              <img src={webflow} alt="webflow logo" style={{ width: '24px', objectFit: 'contain' }} />
-              <img src={tailwind} alt="tailwindcss logo" style={{ width: '24px', objectFit: 'contain' }} />
-              <img src={framer} alt="framer logo" style={{ width: '24px', objectFit: 'contain' }} />
-            </div>
-            <div className="flex space-x-1 items-center">
-              <img src={figma} alt="figma logo" style={{ width: '24px', objectFit: 'contain' }} />
-              <img src={github} alt="github logo" style={{ width: '24px', objectFit: 'contain' }} />
-            </div>
-            <div className="flex space-x-1 items-center">
-              <div className="p-0.5 bg-white rounded">
-                <img src={threejs} alt="threejs logo" style={{ width: '20px', objectFit: 'contain' }} />
+              <div className="flex space-x-2 py-1 px-2 border rounded">
+                <img src={figma} alt="figma logo" style={{ width: '18px', objectFit: 'contain' }} />
+                <p>Figma</p>
               </div>
-              <img src={framerMotion} alt="framer motion logo" style={{ width: '20px', objectFit: 'contain' }} />
+              <div className="flex space-x-2 py-1 px-2 border rounded">
+                <img src={github} alt="github logo" style={{ width: '20px', objectFit: 'contain' }} />
+                <p>Github</p>
+              </div>
             </div>
           </div>
         </div>
@@ -95,13 +93,18 @@ export const Home = (props) => {
           </div>
         </div>
         <div className="col-span-3 md:col-span-1 col-start-4 md:col-start-4 row-start-5 md:row-start-4 space-y-2">
-          <p className="text-xl font-bold">flooke</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <Button className="w-full" onClick={() => window.open('https://github.com/heres-sav/my-portfolio', '_blank')}>
+            <div className="flex space-x-2 my-2 justify-center items-center">
+              <img src={github} alt="github logo" style={{ width: '24px', objectFit: 'contain' }} />
+              <p>Star on Github</p>
+              <ArrowForwardIcon fontSize="sm" />
+            </div>
+          </Button>
         </div>
       </div>
       <ToolsPreview />
       <ResourcePreview />
-      <Section className="border">
+      <div className="grid w-full grid-cols-2 gap-4 my-2 p-4 md:p-8 border">
         <div className="space-y-2">
           <p>CONNECT</p>
           <h3 className="text-xl md:text-3xl font-bold">Get in Touch</h3>
@@ -117,7 +120,7 @@ export const Home = (props) => {
             <p>+91-9062786568</p>
           </a>
         </div>
-      </Section>
+      </div>
     </section>
   );
 };
