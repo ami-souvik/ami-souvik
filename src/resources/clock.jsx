@@ -23,7 +23,7 @@ const Rotate = ({
   </div>
 );
 
-export const Clock = () => {
+export const Countdown = () => {
   const [time, setTime] = useState(new Date());
   const timeout = setTimeout(() => {
     setTime(new Date());

@@ -11,6 +11,14 @@ const config = {
     },
     extend: {
       colors: {
+        'background': {
+          dark: '#121212',
+          light: '#ffffff'
+        },
+        'inverse-background': {
+          light: '#121212',
+          dark: '#ffffff'
+        },
         'primary-main': '#121212',
       },
       animation: {

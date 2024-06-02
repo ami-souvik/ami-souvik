@@ -1,17 +1,19 @@
-import { Clock } from "./clock";
+import { Countdown } from "./clock";
 import { Badge } from "./badge";
 
 export const resources = [
     {
-        title: "Clock",
+        title: "Countdown",
         subtitle: "Just a silly rotating second clock",
         tags: ['simple', 'time'],
-        component: Clock
+        component: Countdown,
+        href: "countdown"
     },
     {
         title: "Badge",
         subtitle: "Just a silly rotating second clock",
         tags: ['simple', 'time'],
-        component: Badge
+        component: Badge,
+        href: "badge"
     }
 ]

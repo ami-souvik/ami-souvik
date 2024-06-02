@@ -1,4 +1,4 @@
-import { Clock, ResourceUI, resources } from '@resources';
+import { Countdown, ResourceUI, resources } from '@resources';
 import { Drawer } from '@components';
 
 export const Resources = () => {
@@ -7,8 +7,8 @@ export const Resources = () => {
       <div className="container flex-1 items-start md:grid md:grid-cols-[240px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[250px_minmax(0,1fr)] lg:gap-10">
         <Drawer items={resources} />
         <div className="flex flex-col items-start space-y-2">
-          <ResourceUI title="Clock">
-            <Clock />
+          <ResourceUI title="Countdown">
+            <Countdown />
           </ResourceUI>
         </div>
       </div>

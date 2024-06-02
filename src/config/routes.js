@@ -2,16 +2,20 @@ import { Home, Resources, ToolsPreview } from '@screens';
 
 export const routes = [
 	{
+		exact: true,
 		href: '/',
 		label: 'Home',
-		component: Home
+		component: Home,
+		componentProps: {}
 	},
 	{
+		exact: true,
 		href: '/tools',
 		label: 'Tools',
 		component: ToolsPreview
 	},
 	{
+		exact: false,
 		href: '/resources',
 		label: 'Resources',
 		component: Resources

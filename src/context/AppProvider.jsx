@@ -1,6 +1,6 @@
-import { createContext, useContext, useEffect, useRef, useState } from 'react';
-import { Provider } from 'react-redux';
 import { useMediaQuery } from '@mui/material';
+import { createContext, useContext, useEffect, useState } from 'react';
+import { Provider } from 'react-redux';
 import { store } from '@store';
 
 export const AppContext = createContext({});
@@ -10,8 +10,8 @@ export const useApp = () => {
 };
 
 export const AppProvider = ({ children }) => {
-  // const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-  const prefersDarkMode = false;
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  // const prefersDarkMode = false;
   const [mode, setMode] = useState(prefersDarkMode ? 'dark' : 'light');
   const toggleMode = () => {
     setMode((mode) => (mode === 'light' ? 'dark' : 'light'));

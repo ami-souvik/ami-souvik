@@ -1,5 +1,12 @@
-import { Children, createContext, createElement, useContext, useEffect, useState } from 'react';
-import { Box, useMediaQuery } from '@mui/material';
+import { createContext, createElement, useContext, useState } from 'react';
+
+const matchRoute = ({ exact, href }) => {
+  return exact ? href === window.location.pathname : window.location.pathname.startsWith(href);
+};
+
+const findRoute = (routes) => {
+  return routes.filter((r) => matchRoute(r))[0];
+};
 
 export const RouterContext = createContext({
   state: {
@@ -12,46 +19,25 @@ export const useRouter = () => {
   return useContext(RouterContext);
 };
 
-export const RouterProvider = ({ href = '/', children }) => {
+export const RouterProvider = ({ href = '/', routes, children }) => {
   const [prevstate, setPrevState] = useState(null);
-  const [state, setState] = useState({ href });
-  onpopstate = (e) => {
-    setPrevState(null);
-    setState(e.state);
+  const [state, setState] = useState(findRoute(routes));
+  onpopstate = () => {
+    setState(findRoute(routes));
   };
   window.addEventListener('popstate', onpopstate);
   const navigate = (href) => {
     window.history.pushState({ href }, '', window.location.protocol + '//' + window.location.host + href);
     setPrevState(state);
-    setState({ href });
+    setState(findRoute(routes));
   };
-  useEffect(() => {
-    setState({ href: window.location.pathname });
-  }, []);
-  return <RouterContext.Provider value={{ prevstate, state, navigate }}>{children}</RouterContext.Provider>;
+  return (
+    <RouterContext.Provider value={{ routes, prevstate, state, setState, navigate }}>{children}</RouterContext.Provider>
+  );
 };
 
-export const Routes = ({ children }) => {
+export const Outlet = () => {
   const { state } = useRouter();
-  let thisElement = null;
-  const matchRoute = (path) => {
-    return path === window.location.pathname;
-  };
-  Children.forEach(children, (element, index) => {
-    if (element?.props?.path && matchRoute(element.props.path)) {
-      thisElement = element;
-    }
-  });
-  if (thisElement?.props?.href) {
-    thisElement.props.href = state.href;
-  }
-  return thisElement;
-};
-
-export const Route = ({ path, component, componentProps }) => {
-  const mdw = useMediaQuery((theme) => theme.breakpoints.down('md'));
-  if (path === window.location.pathname) {
-    return <div className="px-6 mb:px-12 py-3">{createElement(component, componentProps)}</div>;
-  }
-  return <></>;
+  console.log(state);
+  return createElement(state.component, state.componentProps);
 };

@@ -1,12 +1,7 @@
 import { createElement } from 'react';
 import { ResourceCard, resources } from '@resources';
 import react from '@assets/react.png';
-import webflow from '@assets/webflow.png';
 import tailwind from '@assets/tailwind.png';
-import framer from '@assets/framer.png';
-import figma from '@assets/figma.png';
-import github from '@assets/github.png';
-import threejs from '@assets/threejs.png';
 import framerMotion from '@assets/framer-motion.png';
 
 export const ResourcePreview = () => {
@@ -15,8 +10,11 @@ export const ResourcePreview = () => {
       <div className="w-full grid grid-cols-3 gap-4">
         <div className="auto-rows-[22rem] col-span-3 md:col-span-1 flex h-full flex-col justify-center space-y-2">
           <p>RESOURCES</p>
-          <h3 className="text-xl md:text-3xl">A few open-source UI elements</h3>
-          <p className="flex space-x-1">
+          <h3 className="text-3xl md:text-5xl">
+            A few open-source UI <span className="text-5xl md:text-7xl font-curvy">resources</span>
+          </h3>
+          <p className="flex space-x-1 flex-wrap">
+            <p>Built with </p>
             <img src={react} alt="react logo" style={{ width: '18px', objectFit: 'contain' }} />
             <p>React,</p>
             <img src={tailwind} alt="tailwindcss logo" style={{ width: '18px', objectFit: 'contain' }} />
@@ -25,8 +23,8 @@ export const ResourcePreview = () => {
             <p>Framer Motion</p>
           </p>
         </div>
-        {resources.map(({ title, subtitle, tags = [], component }) => (
-          <ResourceCard title={title} subtitle={subtitle} tags={tags} className="col-span-3 md:col-span-1">
+        {resources.map(({ component, ...props }, idx) => (
+          <ResourceCard key={idx} className="col-span-3 md:col-span-1" {...props}>
             {createElement(component)}
           </ResourceCard>
         ))}

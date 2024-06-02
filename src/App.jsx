@@ -1,7 +1,7 @@
 import { useMemo, useRef } from 'react';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { routes } from '@config';
-import { Route, RouterProvider, Routes, useApp } from '@context';
+import { RouterProvider, Outlet, useApp } from '@context';
 import { Footer, Header, StickyCursor } from '@components';
 import { getDesignTokens } from '@styles';
 
@@ -14,13 +14,11 @@ function App() {
       <StickyCursor stickyElement={stickyElement} />
       <div className="min-h-screen bg-white dark:bg-primary-main">
         <CssBaseline />
-        <RouterProvider href="/">
-          <Header ref={stickyElement} />
-          <Routes>
-            {routes.map(({ href, label, component }) => (
-              <Route key={href} label={label} path={href} component={component} />
-            ))}
-          </Routes>
+        <RouterProvider href="/" routes={routes}>
+          <Header />
+          <div className="px-6 md:px-12 py-3">
+            <Outlet />
+          </div>
         </RouterProvider>
       </div>
       <Footer />

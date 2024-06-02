@@ -1,5 +1,5 @@
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Section, BorderBeam, DotPattern, WordRotate, Button } from '@components';
+import { BorderBeam, DotPattern, WordRotate, Button } from '@components';
 import { devProcess } from '@config';
 import { ResourcePreview, Showcase, ToolsPreview } from '@screens';
 import { cn } from '@utils';
@@ -20,9 +20,9 @@ export const Home = (props) => {
       <div className="h-full grid grid-cols-6 gap-4">
         <div className="col-span-6 row-span-1 md:row-span-3">
           <div className="flex flex-col items-center select-none px-0 md:px-6 py-0 md:py-12 space-y-4">
-            <h1 className="text-3xl md:text-6xl align-center">
+            <h1 className="text-6xl md:text-8xl text-center">
               A collection of tools and resources for{' '}
-              <span className="text-6xl md:text-8xl font-curvy">developers</span>
+              <span className="text-7xl md:text-9xl font-curvy">developers</span>
             </h1>
             <div>
               <h2 className="text-md md:text-xl text-center font-light">
@@ -46,7 +46,7 @@ export const Home = (props) => {
           </div>
         </div>
         <div className="flex justify-center col-span-6 md:col-span-2 row-span-1 md:row-span-3 col-start-1 mb:col-start-5 row-start-4 mb:row-start-4">
-          <div className="relative p-[32px] rounded-xl space-y-4 border md:shadow-xl z-10">
+          <div className="w-full relative p-[32px] rounded-xl space-y-4 border md:shadow-xl z-10">
             <BorderBeam />
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
               <div className="w-[80px] h-[4px] bg-primary-main dark:bg-white rounded-xl" />
@@ -80,15 +80,6 @@ export const Home = (props) => {
         </div>
         <div className="col-span-3 md:col-span-1 row-span-1 md:row-span-2 col-start-1 md:col-start-4 row-start-5">
           <div className="relative flex flex-col h-full w-full items-start justify-center overflow-hidden rounded-lg border bg-background px-6 py-2 md:shadow-xl">
-            <WordRotate
-              words={devProcess.map(({ title, subtitle }, index) => (
-                <div className="space-y-2">
-                  <p className="text-6xl font-light">{index + 1}</p>
-                  <p className="text-4xl font-medium">{title}</p>
-                  <p className="text-xl font-light">{subtitle}</p>
-                </div>
-              ))}
-            />
             <DotPattern className={cn('[mask-image:radial-gradient(120px_circle_at_center,white,transparent)]')} />
           </div>
         </div>
@@ -104,23 +95,6 @@ export const Home = (props) => {
       </div>
       <ToolsPreview />
       <ResourcePreview />
-      <div className="grid w-full grid-cols-2 gap-4 my-2 p-4 md:p-8 border">
-        <div className="space-y-2">
-          <p>CONNECT</p>
-          <h3 className="text-xl md:text-3xl font-bold">Get in Touch</h3>
-          <p>I'd love to hear from you, for any inquiries or collaborations.</p>
-        </div>
-        <div className="space-y-4" spacing={1}>
-          <p className="font-bold">Email</p>
-          <a href="mailto:dsouvik141@gmail.com" className="underline underline-offset-4">
-            <p>dsouvik141@gmail.com</p>
-          </a>
-          <p className="font-bold">Phone</p>
-          <a href="tel:919062786568" className="underline underline-offset-4">
-            <p>+91-9062786568</p>
-          </a>
-        </div>
-      </div>
     </section>
   );
 };
