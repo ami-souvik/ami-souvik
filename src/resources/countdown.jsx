@@ -15,7 +15,9 @@ const Rotate = ({
     <div className="overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div key={value} transition={transition} {...framerProps}>
-          <div className="h-24 w-24 flex justify-center items-center text-6xl">{String(value).padStart(2, '0')}</div>
+          <div className="h-20 md:h-24 w-20 md:w-24 flex justify-center items-center text-5xl md:text-6xl">
+            {String(value).padStart(2, '0')}
+          </div>
         </motion.div>
       </AnimatePresence>
     </div>
@@ -24,9 +26,9 @@ const Rotate = ({
 );
 
 export const Countdown = () => {
-  const [time, setTime] = useState(new Date());
+  const [time, setTime] = useState(7200);
   const timeout = setTimeout(() => {
-    setTime(new Date());
+    setTime(time - 1);
   }, 1000);
   useEffect(() => {
     return () => {
@@ -34,12 +36,12 @@ export const Countdown = () => {
     };
   }, []);
   return (
-    <div className="p-4 flex items-center border border-black dark:border-white rounded-xl">
-      <Rotate label="hours" value={time.getHours() || 0} />
-      <div className="text-6xl">:</div>
-      <Rotate label="minutes" value={time.getMinutes() || 0} />
-      <div className="text-6xl">:</div>
-      <Rotate label="seconds" value={time.getSeconds() || 0} />
+    <div className="p-2 flex items-center border border-black dark:border-white rounded-xl">
+      <Rotate label="hours" value={Math.floor(time / 3600)} />
+      <div className="text-4xl md:text-6xl">:</div>
+      <Rotate label="minutes" value={Math.floor((time / 60) % 60)} />
+      <div className="text-4xl md:text-6xl">:</div>
+      <Rotate label="seconds" value={time % 60} />
     </div>
   );
 };

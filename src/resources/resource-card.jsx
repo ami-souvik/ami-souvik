@@ -1,3 +1,4 @@
+import { Anchor } from '@components';
 import { cn } from '@utils';
 
 export const ResourceCard = ({ href, title, subtitle, tags = [], className, children }) => (
@@ -11,7 +12,7 @@ export const ResourceCard = ({ href, title, subtitle, tags = [], className, chil
       className,
     )}
   >
-    <a href={`/resources/${href}`}>
+    <Anchor href={`/resources/${href}`}>
       <div className="flex flex-col items-center transition-all duration-300 group-hover:scale-110">
         <div className="py-12">{children}</div>
       </div>
@@ -27,6 +28,6 @@ export const ResourceCard = ({ href, title, subtitle, tags = [], className, chil
         </div>
       </div>
       <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
-    </a>
+    </Anchor>
   </div>
 );

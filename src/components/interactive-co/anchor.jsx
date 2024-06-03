@@ -7,8 +7,8 @@ export const Anchor = ({ href, className, children }) => {
     navigate(href);
   };
   return (
-    <a className={className} onClick={click}>
+    <div className={className} onClick={click}>
       {children}
-    </a>
+    </div>
   );
 };

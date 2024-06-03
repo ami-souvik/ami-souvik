@@ -1,4 +1,4 @@
-import { Home, Resources, ToolsPreview } from '@screens';
+import { Home, Resources, Tools } from '@screens';
 
 export const routes = [
 	{
@@ -12,7 +12,7 @@ export const routes = [
 		exact: true,
 		href: '/tools',
 		label: 'Tools',
-		component: ToolsPreview
+		component: Tools
 	},
 	{
 		exact: false,

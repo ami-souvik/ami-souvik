@@ -11,10 +11,10 @@ const config = {
     },
     extend: {
       colors: {
-        'background': {
-          dark: '#121212',
-          light: '#ffffff'
-        },
+        'background': '#ffffff',
+        'background-dark': '#121212',
+        'foreground': '#121212',
+        'foreground-dark': '#ffffff',
         'inverse-background': {
           light: '#121212',
           dark: '#ffffff'

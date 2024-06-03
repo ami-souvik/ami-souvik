@@ -1,18 +1,15 @@
-import { useMemo, useRef } from 'react';
-import { CssBaseline, ThemeProvider } from '@mui/material';
+import { useRef } from 'react';
+import { CssBaseline } from '@mui/material';
 import { routes } from '@config';
-import { RouterProvider, Outlet, useApp } from '@context';
+import { RouterProvider, Outlet } from '@context';
 import { Footer, Header, StickyCursor } from '@components';
-import { getDesignTokens } from '@styles';
 
 function App() {
   const stickyElement = useRef(null);
-  const { mode } = useApp();
-  const theme = useMemo(() => getDesignTokens(mode), [mode]);
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <StickyCursor stickyElement={stickyElement} />
-      <div className="min-h-screen bg-white dark:bg-primary-main">
+      <div className="min-h-screen">
         <CssBaseline />
         <RouterProvider href="/" routes={routes}>
           <Header />
@@ -22,7 +19,7 @@ function App() {
         </RouterProvider>
       </div>
       <Footer />
-    </ThemeProvider>
+    </>
   );
 }
 

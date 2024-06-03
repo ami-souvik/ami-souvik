@@ -30,6 +30,8 @@ export const RouterProvider = ({ href = '/', routes, children }) => {
     window.history.pushState({ href }, '', window.location.protocol + '//' + window.location.host + href);
     setPrevState(state);
     setState(findRoute(routes));
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   };
   return (
     <RouterContext.Provider value={{ routes, prevstate, state, setState, navigate }}>{children}</RouterContext.Provider>
@@ -38,6 +40,5 @@ export const RouterProvider = ({ href = '/', routes, children }) => {
 
 export const Outlet = () => {
   const { state } = useRouter();
-  console.log(state);
   return createElement(state.component, state.componentProps);
 };

@@ -1,1 +1,1 @@
-export * from './folioSlice';
+export * from './configSlice';

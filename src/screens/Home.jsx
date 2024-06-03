@@ -1,17 +1,10 @@
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { BorderBeam, DotPattern, WordRotate, Button } from '@components';
-import { devProcess } from '@config';
-import { ResourcePreview, Showcase, ToolsPreview } from '@screens';
+import { BorderBeam, DotPattern, Button } from '@components';
+import { ResourcePreview, ToolsPreview } from '@screens';
 import { cn } from '@utils';
 import sav from '@assets/sav.jpg';
-import react from '@assets/react.png';
-import webflow from '@assets/webflow.png';
-import tailwind from '@assets/tailwind.png';
-import framer from '@assets/framer.png';
 import figma from '@assets/figma.png';
 import github from '@assets/github.png';
-import threejs from '@assets/threejs.png';
-import framerMotion from '@assets/framer-motion.png';
 
 export const Home = (props) => {
   const { sectionRef } = props;
@@ -37,7 +30,7 @@ export const Home = (props) => {
           </div>
         </div>
         <div className="col-span-6 md:col-span-3 row-span-1 md:row-span-3 col-start-1">
-          <div className="relative flex flex-col h-full w-full items-start justify-start overflow-hidden rounded-lg border bg-background p-8 md:shadow-xl">
+          <div className="relative flex flex-col h-full w-full items-start justify-start overflow-hidden rounded-lg border bg-background dark:bg-background-dark p-8 md:shadow-xl">
             <p>AIM</p>
             <h3 className="text-xl md:text-3xl">
               Creating stunning websites that <span className="text-3xl md:text-5xl font-curvy">Stand Out</span>
@@ -46,7 +39,7 @@ export const Home = (props) => {
           </div>
         </div>
         <div className="flex justify-center col-span-6 md:col-span-2 row-span-1 md:row-span-3 col-start-1 mb:col-start-5 row-start-4 mb:row-start-4">
-          <div className="w-full relative p-[32px] rounded-xl space-y-4 border md:shadow-xl z-10">
+          <div className="w-full relative p-[32px] rounded-xl space-y-4 border md:shadow-xl z-10 overflow-hidden">
             <BorderBeam />
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
               <div className="w-[80px] h-[4px] bg-primary-main dark:bg-white rounded-xl" />
@@ -79,7 +72,7 @@ export const Home = (props) => {
           </div>
         </div>
         <div className="col-span-3 md:col-span-1 row-span-1 md:row-span-2 col-start-1 md:col-start-4 row-start-5">
-          <div className="relative flex flex-col h-full w-full items-start justify-center overflow-hidden rounded-lg border bg-background px-6 py-2 md:shadow-xl">
+          <div className="relative flex flex-col h-full w-full items-start justify-center overflow-hidden rounded-lg border bg-background dark:bg-background-dark px-6 py-2 md:shadow-xl">
             <DotPattern className={cn('[mask-image:radial-gradient(120px_circle_at_center,white,transparent)]')} />
           </div>
         </div>

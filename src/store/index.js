@@ -1,22 +1,22 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
-import { folioReducer } from '@slice';
+import { configReducer } from '@slice';
+import storage from 'redux-persist/lib/storage'
 
-const reducers = {
-  folio: folioReducer
-}
-// const reducers = combineReducers(reducers);
-
-// const persistConfig = {
-//   key: 'root'
-// };
-
-// const persistedReducer = persistReducer(persistConfig, reducers);
-
-export const store = configureStore({
-  reducer: reducers,
-  devTools: import.meta.env.NODE_ENV !== 'production'
-  // middleware: [thunk]
+const reducers = combineReducers({
+  config: configReducer
 });
 
-// export const persistor = persistStore(store);
+const persistConfig = {
+  key: 'root',
+  storage
+};
+
+const persistedReducer = persistReducer(persistConfig, reducers);
+
+export const store = configureStore({
+  reducer: persistedReducer,
+  devTools: import.meta.env.NODE_ENV !== 'production'
+});
+
+export const persistor = persistStore(store);

@@ -1,6 +1,6 @@
 import { forwardRef, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { useMediaQuery } from '@mui/material';
+import { useMediaQuery } from '@utils';
 
 export const Magnetic = forwardRef(({ offset = 20, children }, ref) => {
   const mdw = useMediaQuery((theme) => theme.breakpoints.down('md'));

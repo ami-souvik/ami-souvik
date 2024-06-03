@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
-import { useMediaQuery, useTheme } from '@mui/material';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { useMediaQuery } from '@utils';
 
 export const StickyCursor = ({ stickyElement }) => {
-  const theme = useTheme();
   const mdw = useMediaQuery((theme) => theme.breakpoints.down('md'));
   const [isHovered, setIsHovered] = useState(false);
   const cursorSize = isHovered ? 60 : 15;
@@ -72,11 +71,10 @@ export const StickyCursor = ({ stickyElement }) => {
       }}
     >
       <motion.div
+        className="fixed bg-foreground dark:bg-foreground-dark"
         style={{
-          position: 'fixed',
           width: cursorSize,
           height: cursorSize,
-          backgroundColor: theme.palette.text.primary,
           borderRadius: '50%',
           pointerEvents: 'none',
           left: smoothMouse.x,
