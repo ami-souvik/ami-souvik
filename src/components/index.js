@@ -3,7 +3,7 @@ export * from './navigation-bar';
 export * from './drawer';
 export * from './header';
 export * from './footer';
-export * from './Image';
+export * from './image';
 export * from './navigator';
 export * from './form-co';
 export * from './interactive-co';
