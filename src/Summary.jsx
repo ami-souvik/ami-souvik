@@ -1,0 +1,3 @@
+export default function Summary() {
+    return <div className="mx-4 py-4 px-8 shadow-xl shadow-slate-800">I am an experienced Full Stack Developer with almost 5 years of expertise. I have a strong history of developing large-scale, high-performance systems, focusing on creating robust, low-latency, and high-throughput applications. My skills encompass both frontend and backend development, making me highly capable in SaaS product engineering. I am dedicated to delivering top-tier engineering, following industry best practices like the 12-factor app principles and 5 Nines of Uptime to optimise systems for performance, scalability, and maintainability.</div>
+}

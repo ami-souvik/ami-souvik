@@ -2,11 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
+/* @font-face {
   font-family: SignPainter;
   src: url(./assets/SignPainterHouseScript.ttf);
+} */
+@font-face {
+  font-family: Schoolbook;
+  src: url(./assets/Schoolbook.ttf);
 }
 :root {
+  color-scheme: light dark;
   /** Primary colors */
   --primary: #068da9;
   --highlight: #19a7ce;
